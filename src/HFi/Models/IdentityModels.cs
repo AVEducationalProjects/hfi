@@ -16,6 +16,8 @@ namespace HFi.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual UserInfo UserInfo { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

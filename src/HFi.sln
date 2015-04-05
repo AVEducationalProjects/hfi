@@ -7,6 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HFi", "HFi\HFi.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HFi.Tests", "HFi.Tests\HFi.Tests.csproj", "{5AE9EFA0-E5EC-475F-AE1E-93AB30CE1D56}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{E412A521-C0FD-4ED7-AFF7-2ECDBDC40FF8}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{C04B6722-E94F-49FB-8418-8870FC193DEB}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\HFi-WAWS-dev.json = PublishScripts\Configurations\HFi-WAWS-dev.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +35,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C04B6722-E94F-49FB-8418-8870FC193DEB} = {E412A521-C0FD-4ED7-AFF7-2ECDBDC40FF8}
 	EndGlobalSection
 EndGlobal
