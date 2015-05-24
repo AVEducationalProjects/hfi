@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HFi.Models.Category">
+    <Position X="3.75" Y="4.5" Width="1.5" />
+    <AssociationLine Name="Parent" Type="HFi.Models.Category" ManuallyRouted="true">
+      <Path>
+        <Point X="4.282" Y="5.796" />
+        <Point X="4.282" Y="6.363" />
+        <Point X="4.729" Y="6.363" />
+        <Point X="4.729" Y="5.796" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACCAAAAAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Transactions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HFi.Models.ApplicationUser">
+    <Position X="2.25" Y="1" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="RootCategory" Type="HFi.Models.Category" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.125" Y="4.608" />
+        <Point X="3.125" Y="4.772" />
+        <Point X="3.75" Y="4.772" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Transactions" Type="HFi.Models.Transaction" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="3.008" />
+        <Point X="6.938" Y="3.008" />
+        <Point X="6.938" Y="4.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Rules" Type="HFi.Models.Rule" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.008" />
+        <Point X="1.5" Y="3.008" />
+        <Point X="1.5" Y="4.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Plans" Type="HFi.Models.Plan" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="2.654" />
+        <Point X="7.38" Y="2.654" />
+        <Point X="7.38" Y="3.867" />
+        <Point X="10.75" Y="3.867" />
+        <Point X="10.75" Y="4.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgCAAEAACAAIECEAAAAAAAAABAAAAAAAAAAAABwACAg=</HashCode>
+      <FileName>Models\ApplicationUser.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RootCategory" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Transactions" />
+      <Property Name="Rules" />
+      <Property Name="Plans" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HFi.Models.Transaction">
+    <Position X="6.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAACAAAAAAAABIAAAAAAACAA=</HashCode>
+      <FileName>Models\Transaction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HFi.Models.Rule">
+    <Position X="0.75" Y="4.5" Width="1.5" />
+    <AssociationLine Name="Conclusion" Type="HFi.Models.Category">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.141" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Rule.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Conclusion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HFi.Models.SourceCategory">
+    <Position X="10" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SourceCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HFi.Models.Source">
+    <Position X="10" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Source.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HFi.Models.Plan">
+    <Position X="10" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAAAACAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Plan.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Entries" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="HFi.Models.PlanEntry">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAACAAAAAAAABAAAAAAAACAA=</HashCode>
+      <FileName>Models\PlanEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
