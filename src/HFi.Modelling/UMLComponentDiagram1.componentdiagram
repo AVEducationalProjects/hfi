@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7d77bc7d-26bd-4535-af5c-71c1cdef7fb7" name="UMLComponentDiagram1" linkedPackageId="c1fe3d15-12d3-4f64-aa2f-ab118b9bba09" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="36785fb6-4293-4174-acfe-2cd8bb16d488">
+      <profileInstance Id="e00e57a7-4f3b-4d24-88ee-a0a3d358ab7c" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="e533034c-e975-4edd-8e8d-a9c0ed3de166">
+      <profileInstance Id="4fbc5812-abaf-495f-9601-cd91ad6492de" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="e978a44e-9134-4068-b9bc-5761b10f6426" name="Модель" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="16088f50-caef-4bf7-b6ad-2331d2f570d3" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="5acc77cc-a5b9-42df-9390-7e1bc2526241" name="Подсистема доступа к данным" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b8b82e24-e585-4eed-b2ec-21e4ea52a820" />
+        <suppliersInternal>
+          <dependency Id="5962228a-c20c-4e75-a656-0b873270ee5b">
+            <componentMoniker Id="e978a44e-9134-4068-b9bc-5761b10f6426" LastKnownName="Модель" />
+            <elementDefinition Id="6acbcfa1-e8de-4175-b51b-6316fdc7cd33" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="b1b257b3-f27a-4abc-b5fc-829c4ce10fb0" name="Контроллер" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fea013a1-db60-438e-9fe4-b9a4ae30075f" />
+        <suppliersInternal>
+          <dependency Id="714806c2-1980-4505-8da1-fc9faa8918a2">
+            <componentMoniker Id="e978a44e-9134-4068-b9bc-5761b10f6426" LastKnownName="Модель" />
+            <elementDefinition Id="0d970944-8d2f-4ae3-a603-c5c24ccbed11" />
+          </dependency>
+          <dependency Id="871cadc6-4e0d-44d4-b3e1-c4fc3b40a42d">
+            <componentMoniker Id="5acc77cc-a5b9-42df-9390-7e1bc2526241" LastKnownName="Подсистема доступа к данным" />
+            <elementDefinition Id="e46383b8-0977-44f0-9cea-096796e2c410" />
+          </dependency>
+          <dependency Id="0eb9e80a-ccab-49cc-b692-4bd16a0c020f">
+            <componentMoniker Id="fc2baf14-6da4-44e3-a46f-48813d0d35d0" LastKnownName="Представление" />
+            <elementDefinition Id="7361d189-2476-4927-aa8a-ca7d8fcc3152" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="fc2baf14-6da4-44e3-a46f-48813d0d35d0" name="Представление" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1507e73c-c27c-478c-b892-d85490afcc78" />
+        <suppliersInternal>
+          <dependency Id="8d56cf50-6a2a-4395-802b-dc889388511b">
+            <componentMoniker Id="e978a44e-9134-4068-b9bc-5761b10f6426" LastKnownName="Модель" />
+            <elementDefinition Id="9b3a9ffc-9a18-4768-8aa2-ae6a136bb104" />
+          </dependency>
+          <dependency Id="d337f3cc-a511-4a0a-9890-00bfa4c1f1b1">
+            <componentMoniker Id="58c6cf50-77ed-4ee6-b242-3535906644ce" LastKnownName="Модули JavaScript" />
+            <elementDefinition Id="7cb36a30-dbcb-49c2-a7db-197832b0a69d" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="58c6cf50-77ed-4ee6-b242-3535906644ce" name="Модули JavaScript" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e9e98db1-d345-4c11-8886-7662af2e279c" />
+        <suppliersInternal>
+          <dependency Id="993aed14-e936-4da6-b907-6ec3d5c2461d">
+            <componentMoniker Id="69086f06-36cf-4c54-87ea-339034b45d45" LastKnownName="API контроллер" />
+            <elementDefinition Id="7417c2c9-6414-470c-97fc-c9d2f7741065" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="69086f06-36cf-4c54-87ea-339034b45d45" name="API контроллер" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ae9a49ef-db06-451c-8ffb-0e7527d2d296" />
+        <generalsInternal>
+          <generalization Id="220742df-8f01-4435-8eb6-7c7717add141" isSubstitutable="false">
+            <componentMoniker Id="b1b257b3-f27a-4abc-b5fc-829c4ce10fb0" LastKnownName="Контроллер" />
+            <elementDefinition Id="71394ba8-33f2-4041-b5ad-6d4800a1799d" />
+          </generalization>
+        </generalsInternal>
+      </component>
+    </componentModelHasComponents>
+  </packagedElements>
+  <package Id="c1fe3d15-12d3-4f64-aa2f-ab118b9bba09" name="HFi.Modelling">
+    <elementDefinition Id="62c53e93-14d4-4f5b-8021-79cbb593d9f1" />
+  </package>
+</componentModel>

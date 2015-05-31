@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22609.0
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HFi", "HFi\HFi.csproj", "{815E33A5-4DEB-40E1-A777-C9D3B0A99F1A}"
 EndProject
@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configura
 		PublishScripts\Configurations\HFi-WAWS-dev.json = PublishScripts\Configurations\HFi-WAWS-dev.json
 	EndProjectSection
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "HFi.Modelling", "HFi.Modelling\HFi.Modelling.modelproj", "{C54FF2F8-C0D3-4C0D-B6EC-12D19B008B2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{5AE9EFA0-E5EC-475F-AE1E-93AB30CE1D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AE9EFA0-E5EC-475F-AE1E-93AB30CE1D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AE9EFA0-E5EC-475F-AE1E-93AB30CE1D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54FF2F8-C0D3-4C0D-B6EC-12D19B008B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54FF2F8-C0D3-4C0D-B6EC-12D19B008B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54FF2F8-C0D3-4C0D-B6EC-12D19B008B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54FF2F8-C0D3-4C0D-B6EC-12D19B008B2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

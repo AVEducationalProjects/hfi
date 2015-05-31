@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" dslVersion="1.0.0.0" Id="ef9431e4-4d4b-45a6-b86f-fe34792d63ad" name="UseCaseDiagram" linkedPackageId="b4c82722-0b61-4c75-8fbb-e3ebc53e9c12" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="8b3bebe9-83ed-40f6-a96d-23f4c78be4d6" name="Пользователь" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9ec576bf-a896-4c3f-a2a0-93f69c36699c" />
+        <targetEnds>
+          <association Id="c3f276e9-1c52-4fe7-9d9d-fa8e3ae0eef2" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Изменение базы нечетких правил" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4c0342e5-0b3c-4880-9ee4-94dc9f23d309" LastKnownName="Изменение базы нечетких правил" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1d7c7ef1-64b4-4b8c-949b-2c1441eeaaf4" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3759c72a-f551-4bf6-bda2-072875d5ebae" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d12ebb04-ac09-472f-b806-837bce0a7fb7" name="Изменение базы нечетких правил" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="50cc7931-a9d3-4de4-8c2c-d4a6f2ab06f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d602e657-c504-4bc4-9bb5-47de1b451da5" />
+          </association>
+          <association Id="79f7a74a-6814-4809-8757-9bbe74189da7" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Загрузка платежей из банковской выписки" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9c13e0b5-b37b-49a6-8c82-680e5b420556" LastKnownName="Загрузка платежей из банковской выписки" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="00ce95d5-421d-4f28-aac9-542a2209538d" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5e3e83d1-3db6-4c1f-b8d2-3823c31e7072" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="85c59883-2ec9-4756-ae93-8391310f8eed" name="Загрузка платежей из банковской выписки" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="632454b4-e377-4720-8379-eb4eb162623f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0ea9c8d4-b072-4e93-a6fe-4d78da795199" />
+          </association>
+          <association Id="a5c40d9a-4a42-43a4-8a03-262db47da8a3" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Ввод платежей" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="469fafd1-5bb3-4dd0-995f-4c35f8550cdd" LastKnownName="Ввод платежей" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="25378567-9554-44c9-8077-08a969fe6d95" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="22f13a84-555f-4e69-be79-87dbc6a1d3f4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0a02d3c4-2de6-41b9-8be2-6907b74c2934" name="Ввод платежей" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="375dad89-e75a-4409-ae93-7ac9bd0b0f8e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3ba76f25-55b8-41bf-ae92-1f1c0c95d241" />
+          </association>
+          <association Id="eca7b915-4300-4e4e-ae5a-8c4a9d4a7d91" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Просмотр отчетов по расходам" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="be3e5b30-61e5-41de-a0b2-b4c5b2bfe9cc" LastKnownName="Просмотр отчетов по расходам" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="30fe6bc5-cfb9-4a1f-9255-644fa65d3ef0" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e68ae895-137f-46df-a43f-1dd5d95e5d31" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="acda6d7c-904c-4c74-83d4-07311a11deb9" name="Просмотр отчетов по расходам" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="74439a08-e0b7-449f-8943-bcae371aa4de" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="925c4ced-e61d-4f0e-9247-a2953b51b19a" />
+          </association>
+          <association Id="a46a16e7-edb5-406a-9b8f-12551787a98d" isDerived="false" sourceEndRoleName="Пользователь" targetEndRoleName="Редактирование дерева категорий" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="33c1e520-c389-4550-8b88-2d65860f4c42" LastKnownName="Редактирование дерева категорий" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5296cb04-8f25-4b44-b1ce-34933f5106d4" name="Пользователь" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f50818ce-cefa-4ead-b013-7b83a18c090b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a6467986-587d-4cd7-8091-7a1c8b60e72d" name="Редактирование дерева категорий" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3563f55d-b235-4a9a-9983-d7188b7f70fe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d181dd5e-e651-4699-bdeb-997fc935314f" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4c0342e5-0b3c-4880-9ee4-94dc9f23d309" name="Изменение базы нечетких правил" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="39785890-2344-46f0-91e3-dbe82ee38c95" />
+        <additions>
+          <include Id="84d1e7eb-d3e9-4c7b-a088-c5c61a148c7e">
+            <useCaseMoniker Id="2b9f7a60-aac1-4af7-832c-02ad4074a67d" LastKnownName="Проверка правил на непротиворечивость" />
+            <elementDefinition Id="ace10ef0-80c8-4451-ac09-279e9baad076" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="83288a86-2f54-47be-ad8b-b1aa8a217900" name="Редактирование параметров термов переменной &quot;Сумма платежа&quot;" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d65e7c86-35da-4f2c-b8cd-883751551d5e" />
+        <extendedCases>
+          <extend Id="d1aa5ace-013e-4139-ba67-e0ced35f7d1b">
+            <useCaseMoniker Id="4c0342e5-0b3c-4880-9ee4-94dc9f23d309" LastKnownName="Изменение базы нечетких правил" />
+            <elementDefinition Id="39e2d9fa-f26a-4b89-8a5c-4b2263977526" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2b9f7a60-aac1-4af7-832c-02ad4074a67d" name="Проверка правил на непротиворечивость" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ee334cfe-ac3b-47da-bd56-c7ee7ec197f1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3bd4ded6-114c-4d0e-85bc-34d4a22275a8" name="Автоматическая классификация платежей" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9a8c406e-e821-4f83-bad1-d98cd8d0f3dc" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9c13e0b5-b37b-49a6-8c82-680e5b420556" name="Загрузка платежей из банковской выписки" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="61f1b580-5a3f-459e-82b6-1959e83451a3" />
+        <additions>
+          <include Id="8c6618ec-f121-4483-9e41-4b08262ce475">
+            <useCaseMoniker Id="3bd4ded6-114c-4d0e-85bc-34d4a22275a8" LastKnownName="Автоматическая классификация платежей" />
+            <elementDefinition Id="9d3cb934-1563-4ebf-9568-2f20f088f521" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="469fafd1-5bb3-4dd0-995f-4c35f8550cdd" name="Ввод платежей" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4efacd99-0a8c-428e-9a13-453231916727" />
+        <additions>
+          <include Id="6af8d6ef-14c2-4951-95fb-3feb8db19505">
+            <useCaseMoniker Id="3bd4ded6-114c-4d0e-85bc-34d4a22275a8" LastKnownName="Автоматическая классификация платежей" />
+            <elementDefinition Id="238b4a9a-a631-419a-8fb9-3351d1243dd6" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="be3e5b30-61e5-41de-a0b2-b4c5b2bfe9cc" name="Просмотр отчетов по расходам" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="15801351-416c-4763-8568-d5167478a862" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4e9eb7bb-ee29-468e-bb72-8b1565b4b420" name="Ввод весов для классификации контрагента" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4d0b1d0b-30c8-4817-91a0-7d086c224c91" />
+        <extendedCases>
+          <extend Id="b4095c92-e771-4176-8bf2-31fdec47e07e">
+            <useCaseMoniker Id="4c0342e5-0b3c-4880-9ee4-94dc9f23d309" LastKnownName="Изменение базы нечетких правил" />
+            <elementDefinition Id="07717539-36da-4236-bbe6-0152b763c655" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="090d9981-0736-48e7-aa1b-98b1d71e7c03" name="Администратор" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4830908f-dda5-4ee1-a402-8345942f816b" />
+        <targetEnds>
+          <association Id="c765b760-6f0c-4810-80f1-0a510dc33aa5" isDerived="false" sourceEndRoleName="Администратор" targetEndRoleName="Настройка справочной информации" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="14e7fa25-20aa-42f4-8435-c5d5d6dc2aed" LastKnownName="Настройка справочной информации" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c0b7fb12-dd03-445e-90ee-b8f544e2e88e" name="Администратор" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="da2fe8af-39d3-4bcd-b03a-49e071ec0b29" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8aa04ee5-80d3-44be-9cd9-dde88f4b00bd" name="Настройка справочной информации" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b357aea2-0420-43aa-963c-1b4255643e9f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="17d80e65-40f9-4079-ab32-2aa6f819635c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="14e7fa25-20aa-42f4-8435-c5d5d6dc2aed" name="Настройка справочной информации" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5462cac6-4271-4293-9c84-b333ddc09c31" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="33c1e520-c389-4550-8b88-2d65860f4c42" name="Редактирование дерева категорий" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="938fbd0c-9b21-43a7-adfe-88d70f073051" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="b4c82722-0b61-4c75-8fbb-e3ebc53e9c12" name="HFi.Modelling">
+    <elementDefinition Id="62c53e93-14d4-4f5b-8021-79cbb593d9f1" />
+    <profileInstances>
+      <packageHasProfileInstances Id="01d1ee63-b061-46ce-af59-73ec23937670">
+        <profileInstance Id="3a727abc-e23f-4408-93a3-189e21a8171b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="129f033a-0aee-4c2e-a9ad-8a48c656f1bd">
+        <profileInstance Id="3ca7e08f-8d6f-402b-a772-cc4843a3091b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

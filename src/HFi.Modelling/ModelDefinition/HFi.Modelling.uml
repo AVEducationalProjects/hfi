@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
+  dslVersion="1.0.0.0"
+  Id="62c53e93-14d4-4f5b-8021-79cbb593d9f1"
+  name="HFi.Modelling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="9ec576bf-a896-4c3f-a2a0-93f69c36699c"
+        name="Пользователь"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="d602e657-c504-4bc4-9bb5-47de1b451da5"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Изменение базы нечетких правил"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="39785890-2344-46f0-91e3-dbe82ee38c95"
+              LastKnownName="Изменение базы нечетких правил"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3759c72a-f551-4bf6-bda2-072875d5ebae"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="50cc7931-a9d3-4de4-8c2c-d4a6f2ab06f1"
+                  name="Изменение базы нечетких правил"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0ea9c8d4-b072-4e93-a6fe-4d78da795199"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Загрузка платежей из банковской выписки"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="61f1b580-5a3f-459e-82b6-1959e83451a3"
+              LastKnownName="Загрузка платежей из банковской выписки"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5e3e83d1-3db6-4c1f-b8d2-3823c31e7072"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="632454b4-e377-4720-8379-eb4eb162623f"
+                  name="Загрузка платежей из банковской выписки"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3ba76f25-55b8-41bf-ae92-1f1c0c95d241"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Ввод платежей"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4efacd99-0a8c-428e-9a13-453231916727"
+              LastKnownName="Ввод платежей"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="22f13a84-555f-4e69-be79-87dbc6a1d3f4"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="375dad89-e75a-4409-ae93-7ac9bd0b0f8e"
+                  name="Ввод платежей"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="925c4ced-e61d-4f0e-9247-a2953b51b19a"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Просмотр отчетов по расходам"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="15801351-416c-4763-8568-d5167478a862"
+              LastKnownName="Просмотр отчетов по расходам"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e68ae895-137f-46df-a43f-1dd5d95e5d31"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="74439a08-e0b7-449f-8943-bcae371aa4de"
+                  name="Просмотр отчетов по расходам"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d181dd5e-e651-4699-bdeb-997fc935314f"
+            isDerived="false"
+            sourceEndRoleName="Пользователь"
+            targetEndRoleName="Редактирование дерева категорий"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="938fbd0c-9b21-43a7-adfe-88d70f073051"
+              LastKnownName="Редактирование дерева категорий"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f50818ce-cefa-4ead-b013-7b83a18c090b"
+                  name="Пользователь"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3563f55d-b235-4a9a-9983-d7188b7f70fe"
+                  name="Редактирование дерева категорий"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="39785890-2344-46f0-91e3-dbe82ee38c95"
+        name="Изменение базы нечетких правил"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="ace10ef0-80c8-4451-ac09-279e9baad076">
+            <useCaseMoniker
+              Id="ee334cfe-ac3b-47da-bd56-c7ee7ec197f1"
+              LastKnownName="Проверка правил на непротиворечивость"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d65e7c86-35da-4f2c-b8cd-883751551d5e"
+        name="Редактирование параметров термов переменной &quot;Сумма платежа&quot;"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="39e2d9fa-f26a-4b89-8a5c-4b2263977526">
+            <useCaseMoniker
+              Id="39785890-2344-46f0-91e3-dbe82ee38c95"
+              LastKnownName="Изменение базы нечетких правил"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ee334cfe-ac3b-47da-bd56-c7ee7ec197f1"
+        name="Проверка правил на непротиворечивость"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9a8c406e-e821-4f83-bad1-d98cd8d0f3dc"
+        name="Автоматическая классификация платежей"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="61f1b580-5a3f-459e-82b6-1959e83451a3"
+        name="Загрузка платежей из банковской выписки"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="9d3cb934-1563-4ebf-9568-2f20f088f521">
+            <useCaseMoniker
+              Id="9a8c406e-e821-4f83-bad1-d98cd8d0f3dc"
+              LastKnownName="Автоматическая классификация платежей"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4efacd99-0a8c-428e-9a13-453231916727"
+        name="Ввод платежей"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="238b4a9a-a631-419a-8fb9-3351d1243dd6">
+            <useCaseMoniker
+              Id="9a8c406e-e821-4f83-bad1-d98cd8d0f3dc"
+              LastKnownName="Автоматическая классификация платежей"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="15801351-416c-4763-8568-d5167478a862"
+        name="Просмотр отчетов по расходам"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4d0b1d0b-30c8-4817-91a0-7d086c224c91"
+        name="Ввод весов для классификации контрагента"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="07717539-36da-4236-bbe6-0152b763c655">
+            <useCaseMoniker
+              Id="39785890-2344-46f0-91e3-dbe82ee38c95"
+              LastKnownName="Изменение базы нечетких правил"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="4830908f-dda5-4ee1-a402-8345942f816b"
+        name="Администратор"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="17d80e65-40f9-4079-ab32-2aa6f819635c"
+            isDerived="false"
+            sourceEndRoleName="Администратор"
+            targetEndRoleName="Настройка справочной информации"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5462cac6-4271-4293-9c84-b333ddc09c31"
+              LastKnownName="Настройка справочной информации"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="da2fe8af-39d3-4bcd-b03a-49e071ec0b29"
+                  name="Администратор"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b357aea2-0420-43aa-963c-1b4255643e9f"
+                  name="Настройка справочной информации"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5462cac6-4271-4293-9c84-b333ddc09c31"
+        name="Настройка справочной информации"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="16088f50-caef-4bf7-b6ad-2331d2f570d3"
+        name="Модель"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="b8b82e24-e585-4eed-b2ec-21e4ea52a820"
+        name="Подсистема доступа к данным"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="6acbcfa1-e8de-4175-b51b-6316fdc7cd33">
+            <componentMoniker
+              Id="16088f50-caef-4bf7-b6ad-2331d2f570d3"
+              LastKnownName="Модель"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="fea013a1-db60-438e-9fe4-b9a4ae30075f"
+        name="Контроллер"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="0d970944-8d2f-4ae3-a603-c5c24ccbed11">
+            <componentMoniker
+              Id="16088f50-caef-4bf7-b6ad-2331d2f570d3"
+              LastKnownName="Модель"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </dependency>
+          <dependency
+            Id="e46383b8-0977-44f0-9cea-096796e2c410">
+            <componentMoniker
+              Id="b8b82e24-e585-4eed-b2ec-21e4ea52a820"
+              LastKnownName="Подсистема доступа к данным"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </dependency>
+          <dependency
+            Id="7361d189-2476-4927-aa8a-ca7d8fcc3152">
+            <componentMoniker
+              Id="1507e73c-c27c-478c-b892-d85490afcc78"
+              LastKnownName="Представление"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="1507e73c-c27c-478c-b892-d85490afcc78"
+        name="Представление"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="9b3a9ffc-9a18-4768-8aa2-ae6a136bb104">
+            <componentMoniker
+              Id="16088f50-caef-4bf7-b6ad-2331d2f570d3"
+              LastKnownName="Модель"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </dependency>
+          <dependency
+            Id="7cb36a30-dbcb-49c2-a7db-197832b0a69d">
+            <componentMoniker
+              Id="e9e98db1-d345-4c11-8886-7662af2e279c"
+              LastKnownName="Модули JavaScript"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="e9e98db1-d345-4c11-8886-7662af2e279c"
+        name="Модули JavaScript"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="7417c2c9-6414-470c-97fc-c9d2f7741065">
+            <componentMoniker
+              Id="ae9a49ef-db06-451c-8ffb-0e7527d2d296"
+              LastKnownName="API контроллер"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </dependency>
+        </suppliersInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="ae9a49ef-db06-451c-8ffb-0e7527d2d296"
+        name="API контроллер"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="71394ba8-33f2-4041-b5ad-6d4800a1799d"
+            isSubstitutable="false">
+            <componentMoniker
+              Id="fea013a1-db60-438e-9fe4-b9a4ae30075f"
+              LastKnownName="Контроллер"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </generalization>
+        </generalsInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="938fbd0c-9b21-43a7-adfe-88d70f073051"
+        name="Редактирование дерева категорий"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
