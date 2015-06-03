@@ -8,23 +8,34 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HFi.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace HFi.Controllers
 {
+    [Authorize]
     public class TransactionsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private UserManager<ApplicationUser> userManager;
 
-        // GET: Transactions
+        public TransactionsController()
+        {
+            userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+        }
+
         public async Task<ActionResult> Index()
         {
-            return View(await db.Transactions.ToListAsync());
+            var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
+            return View(user.Transactions);
         }
 
 
         // GET: Transactions/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
+            var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
+            ViewBag.Categories = user.RootCategory.ToSelectList();
             return View();
         }
 
@@ -33,11 +44,12 @@ namespace HFi.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Date,Source,Purpose,Amount")] Transaction transaction)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Date,Source,Purpose,Amount,CategoryId")] Transaction transaction)
         {
             if (ModelState.IsValid)
             {
-                db.Transactions.Add(transaction);
+                var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
+                user.Transactions.Add(transaction);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -52,8 +64,10 @@ namespace HFi.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
+            ViewBag.Categories = user.RootCategory.ToSelectList();
             Transaction transaction = await db.Transactions.FindAsync(id);
-            if (transaction == null)
+            if (transaction == null || !user.Transactions.Contains(transaction))
             {
                 return HttpNotFound();
             }
@@ -65,7 +79,7 @@ namespace HFi.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Date,Source,Purpose,Amount")] Transaction transaction)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Date,Source,Purpose,Amount,CategoryId")] Transaction transaction)
         {
             if (ModelState.IsValid)
             {
@@ -76,30 +90,17 @@ namespace HFi.Controllers
             return View(transaction);
         }
 
-        // GET: Transactions/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<ActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
             Transaction transaction = await db.Transactions.FindAsync(id);
-            if (transaction == null)
+            if (transaction == null || !user.Transactions.Contains(transaction))
             {
                 return HttpNotFound();
             }
-            return View(transaction);
-        }
-
-        // POST: Transactions/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
-        {
-            Transaction transaction = await db.Transactions.FindAsync(id);
             db.Transactions.Remove(transaction);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return PartialView("_TransactionsList", user.Transactions);
         }
 
         protected override void Dispose(bool disposing)

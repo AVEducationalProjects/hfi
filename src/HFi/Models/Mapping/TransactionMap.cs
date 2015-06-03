@@ -6,7 +6,7 @@ namespace HFi.Models.Mapping
     {
         public TransactionMap()
         {
-            HasOptional(x => x.Category).WithMany(x => x.Transactions);
+            HasOptional(x => x.Category).WithMany(x => x.Transactions).HasForeignKey(x=>x.CategoryId);
         }
     }
 }

@@ -45,11 +45,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -168,6 +168,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SourceCategoriesController.cs" />
     <Compile Include="Controllers\TransactionsController.cs" />
+    <Compile Include="Controllers\Utils.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,6 +191,10 @@
     <Compile Include="Migrations\201506031930217_MappingParentId.cs" />
     <Compile Include="Migrations\201506031930217_MappingParentId.Designer.cs">
       <DependentUpon>201506031930217_MappingParentId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506032130315_MappingCategoryId.cs" />
+    <Compile Include="Migrations\201506032130315_MappingCategoryId.Designer.cs">
+      <DependentUpon>201506032130315_MappingCategoryId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AmountTerm.cs" />
@@ -295,7 +300,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Transactions\Create.cshtml" />
-    <Content Include="Views\Transactions\Delete.cshtml" />
     <Content Include="Views\Transactions\Edit.cshtml" />
     <Content Include="Views\Transactions\Index.cshtml" />
     <Content Include="Views\SourceCategories\Create.cshtml" />
@@ -305,6 +309,7 @@
     <Content Include="Views\SourceCategories\Index.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Categories\_CategoryPartial.cshtml" />
+    <Content Include="Views\Transactions\_TransactionsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -328,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506031930217_MappingParentId.resx">
       <DependentUpon>201506031930217_MappingParentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506032130315_MappingCategoryId.resx">
+      <DependentUpon>201506032130315_MappingCategoryId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

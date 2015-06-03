@@ -58,7 +58,6 @@ namespace HFi.Controllers
         {
             var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
 
-
             if (user.RootCategory.Id != id)
             {
                 Category category = await db.Categories.FindAsync(id);
