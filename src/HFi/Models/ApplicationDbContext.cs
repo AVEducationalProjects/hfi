@@ -1,4 +1,6 @@
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Configuration;
+using HFi.Models.Mapping;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace HFi.Models
@@ -19,8 +21,15 @@ namespace HFi.Models
             return new ApplicationDbContext();
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new TransactionMap());
+            modelBuilder.Configurations.Add(new CategoryMap());
+            base.OnModelCreating(modelBuilder);
+        }
+
         public System.Data.Entity.DbSet<HFi.Models.Transaction> Transactions { get; set; }
 
-        public System.Data.Entity.DbSet<HFi.Models.Rule> Rules { get; set; }
+        public System.Data.Entity.DbSet<HFi.Models.FuzzyRule> Rules { get; set; }
     }
 }

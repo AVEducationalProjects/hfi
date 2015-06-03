@@ -1,0 +1,39 @@
+﻿@model HFi.Models.Category
+
+@{
+    ViewBag.Title = "Дерево категорий";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div id="category-container">
+    @Html.Partial("_CategoryPartial", Model, new ViewDataDictionary { { "Level", 0 } })
+</div>
+
+<div id="category-edit" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Введите название категории</h4>
+            </div>
+            @using (Ajax.BeginForm("CreateOrEdit", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "category-container", OnSuccess = "$('#category-edit').modal('hide');" }))
+            {
+                <div class="modal-body form-horizontal">
+
+                    <div class="form-group">
+                        @Html.HiddenFor(x => x.Id)
+                        @Html.HiddenFor(x => x.ParentId)
+                        @Html.LabelFor(x => x.Name, "Название", new { @class = "control -label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.Name)
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

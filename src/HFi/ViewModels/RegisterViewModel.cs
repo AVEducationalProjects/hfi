@@ -5,6 +5,16 @@ namespace HFi.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [Display(Name = "Имя")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [Display(Name = "Фамилия")]
+        public string LastName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

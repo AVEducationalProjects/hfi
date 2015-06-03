@@ -21,20 +21,6 @@ namespace HFi.Controllers
             return View(await db.Transactions.ToListAsync());
         }
 
-        // GET: Transactions/Details/5
-        public async Task<ActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Transaction transaction = await db.Transactions.FindAsync(id);
-            if (transaction == null)
-            {
-                return HttpNotFound();
-            }
-            return View(transaction);
-        }
 
         // GET: Transactions/Create
         public ActionResult Create()

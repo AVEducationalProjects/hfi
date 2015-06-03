@@ -25,21 +25,23 @@ namespace HFi.Models
             
         public virtual IList<Transaction> Transactions { get; set; }
 
-        public virtual IList<Rule> Rules { get; set; }
+        public virtual IList<FuzzyRule> Rules { get; set; }
 
         public virtual IList<Plan> Plans { get; set; }
 
-        public virtual Source Source1 { get; set; }
+        public ApplicationUser()
+        {
+            ABitAmountTerm = new AmountTerm();
+            SmallAmountTerm = new AmountTerm();
+            NormalAmountTerm = new AmountTerm();
+            LargeAmountTerm = new AmountTerm();
 
-        public virtual Source Source2 { get; set; }
+            //RootCategory = new Category() {Name = "Все статьи"};
 
-        public virtual Source Source3 { get; set; }
-
-        public virtual SourceCategory Category1 { get; set; }
-
-        public virtual SourceCategory Category2 { get; set; }
-
-        public virtual SourceCategory Category3 { get; set; }
+            Transactions = new List<Transaction>();
+            Rules = new List<FuzzyRule>();
+            Plans = new List<Plan>();
+        }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
