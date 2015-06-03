@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace HFi.Controllers
 {
-    public class RuleController : Controller
+    public class RulesController : Controller
     {
         // GET: Rule
         public ActionResult Index()
