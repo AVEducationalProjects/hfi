@@ -1,0 +1,14 @@
+﻿@model System.Collections.Generic.IList<HFi.Models.FuzzyRule>
+
+@{
+    ViewBag.Title = "Правила";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div id="rules-container">
+    @Html.Partial("_RulesList", Model)
+</div>

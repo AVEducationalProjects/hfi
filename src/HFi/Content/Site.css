@@ -22,3 +22,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.term-button {
+    margin-bottom: 5px;
+}
+
+.expression-node {
+    margin-left: 30px;
+}

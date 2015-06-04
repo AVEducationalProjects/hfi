@@ -1,0 +1,32 @@
+﻿@model System.Collections.Generic.IList<HFi.Models.FuzzyRule>
+
+@{
+    var groupedRules = Model.GroupBy(x => x.Conclusion.Name);
+}
+
+<table class="table">
+    @foreach (var ruleGroup in groupedRules)
+    {
+        <tr>
+            <th colspan="2">
+                @ruleGroup.Key
+            </th>
+        </tr>
+        foreach (var rule in ruleGroup)
+        {
+            <tr>
+                @{
+                    var ruleString = rule.ToString();
+                    ruleString = ruleString.Substring(1, ruleString.Length - 2);
+                }
+                <td>@ruleString</td>
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { Id = rule.Id }, new { @class = "glyphicon glyphicon-edit" })
+                    @Ajax.ActionLink(" ", "Delete", new {Id = rule.Id}, new AjaxOptions {Confirm = "Удалить?", InsertionMode = InsertionMode.Replace, UpdateTargetId = "rules-container"}, new {@class = "glyphicon glyphicon-remove"})
+                </td>
+            </tr>
+
+        }
+    }
+
+</table>

@@ -1,0 +1,58 @@
+﻿<div id="expression-add" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Введите название категории</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#and-or-not-tab">И / ИЛИ / Не</a></li>
+                        <li><a data-toggle="tab" href="#date-tab">Дата</a></li>
+                        <li><a data-toggle="tab" href="#amount-tab">Cумма</a></li>
+                        <li><a data-toggle="tab" href="#source-tab">Контрагент</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="and-or-not-tab" class="tab-pane active">
+                            <div style="padding: 10px;" class="col-md-5">
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"and", "expressions":[]}'>Операция И</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"or", "expressions":[]}'>Операция ИЛИ</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"not", "expressions":[]}'>Операция НЕ</a>
+                            </div>
+
+                        </div>
+
+                        <div id="date-tab" class="tab-pane">
+                            <div class="col-md-5" style="padding: 10px;">
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Начало недели"}'>Начало недели</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Середина недели"}'>Середина недели</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Конец недели"}'>Конец недели</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Начало месяца"}'>Начало месяца</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Середина месяца"}'>Середина месяца</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Конец месяца"}'>Конец месяца</a>
+                            </div>
+                        </div>
+
+                        <div id="amount-tab" class="tab-pane">
+                            <div class="col-md-5" style="padding: 10px;">
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Маленькая сумма"}'>Маленькая сумма</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Небольшая сумма"}'>Небольшая сумма</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Средняя сумма"}'>Средняя сумма</a>
+                                <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"Большая сумма"}'>Большая сумма</a>
+                            </div>
+                        </div>
+
+                        <div id="source-tab" class="tab-pane">
+                            <div style="padding: 10px;">
+                                <a href="#" role="button" class="btn btn-success">Операция И</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -166,6 +166,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RuleBuilder.cs" />
     <Compile Include="Controllers\RuleController.cs" />
     <Compile Include="Controllers\SourceCategoriesController.cs" />
     <Compile Include="Controllers\TransactionsController.cs" />
@@ -197,12 +198,19 @@
     <Compile Include="Migrations\201506032130315_MappingCategoryId.Designer.cs">
       <DependentUpon>201506032130315_MappingCategoryId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506041348234_ConclusionForeignKey.cs" />
+    <Compile Include="Migrations\201506041348234_ConclusionForeignKey.Designer.cs">
+      <DependentUpon>201506041348234_ConclusionForeignKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AmountTerm.cs" />
+    <Compile Include="Models\Fuzzy\Expression.cs" />
+    <Compile Include="Models\Fuzzy\Term.cs" />
     <Compile Include="Models\Mapping\CategoryMap.cs" />
     <Compile Include="Models\Plan.cs" />
     <Compile Include="Models\PlanEntry.cs" />
     <Compile Include="Models\FuzzyRule.cs" />
+    <Compile Include="Models\Mapping\RuleMap.cs" />
     <Compile Include="Models\Source.cs" />
     <Compile Include="Models\SourceCategory.cs" />
     <Compile Include="Models\Mapping\TransactionMap.cs" />
@@ -311,10 +319,14 @@
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Categories\_CategoryPartial.cshtml" />
     <Content Include="Views\Transactions\_TransactionsList.cshtml" />
+    <Content Include="Views\Rules\Index.cshtml" />
+    <Content Include="Views\Rules\_RulesList.cshtml" />
+    <Content Include="Views\Rules\Create.cshtml" />
+    <Content Include="Views\Rules\Edit.cshtml" />
+    <Content Include="Views\Rules\_TermDialog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Rule\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -338,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506032130315_MappingCategoryId.resx">
       <DependentUpon>201506032130315_MappingCategoryId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506041348234_ConclusionForeignKey.resx">
+      <DependentUpon>201506041348234_ConclusionForeignKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
