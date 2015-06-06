@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HFi.Models
 {
@@ -12,5 +14,16 @@ namespace HFi.Models
 
         public decimal Amount { get; set; }
 
+        public decimal SumAmount
+        {
+            get { return Amount + SubCategoryEntries.Sum(x => x.Amount); }
+        }
+
+        public List<PlanEntry> SubCategoryEntries { get; set; }
+
+        public PlanEntry()
+        {
+            SubCategoryEntries =new List<PlanEntry>();
+        }
     }
 }

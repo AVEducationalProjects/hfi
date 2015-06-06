@@ -1,0 +1,44 @@
+﻿@model HFi.ViewModels.MonthTableViewModel
+
+@{
+    var begin1 = 1;
+    var end1 = 15;
+    var begin2 = 16;
+    var end2 = 31;
+    if (Model.Month < 12)
+    {
+        end2 = (new DateTime(Model.Year, Model.Month + 1, 1)).AddDays(-1).Day;
+    }
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Категория</th>
+        @for (int i = begin1; i <= end1; i++)
+        {
+            <th>@Html.ActionLink(i.ToString(), "MonthPlan", new {Id = i})</th>
+        }
+        <th>Итого</th>
+    </tr>
+    </thead>
+    <tbody>
+    @Html.Partial("_MonthTableRow", Model, new ViewDataDictionary {{"Category", Model.RootCategory}, {"Level", 0}, {"Begin", begin1}, { "End", end1 } })
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Категория</th>
+            @for (int i = begin2; i <= end2; i++)
+            {
+                <th>@Html.ActionLink(i.ToString(), "MonthPlan", new { Id = i })</th>
+            }
+            <th>Итого</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.Partial("_MonthTableRow", Model, new ViewDataDictionary { { "Category", Model.RootCategory }, { "Level", 0 } , { "Begin", begin2 }, { "End", end2 } })
+    </tbody>
+</table>

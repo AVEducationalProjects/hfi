@@ -166,6 +166,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="ViewModels\MonthTableViewModel.cs" />
+    <Compile Include="Controllers\PlanController.cs" />
     <Compile Include="Controllers\RuleBuilder.cs" />
     <Compile Include="Controllers\RuleController.cs" />
     <Compile Include="Controllers\SourceCategoriesController.cs" />
@@ -202,11 +204,20 @@
     <Compile Include="Migrations\201506041348234_ConclusionForeignKey.Designer.cs">
       <DependentUpon>201506041348234_ConclusionForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506051857118_PlanNameAndIgnoringCollection.cs" />
+    <Compile Include="Migrations\201506051857118_PlanNameAndIgnoringCollection.Designer.cs">
+      <DependentUpon>201506051857118_PlanNameAndIgnoringCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506051859127_PlanEntryIgnoreCollection.cs" />
+    <Compile Include="Migrations\201506051859127_PlanEntryIgnoreCollection.Designer.cs">
+      <DependentUpon>201506051859127_PlanEntryIgnoreCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AmountTerm.cs" />
     <Compile Include="Models\Fuzzy\Expression.cs" />
     <Compile Include="Models\Fuzzy\Term.cs" />
     <Compile Include="Models\Mapping\CategoryMap.cs" />
+    <Compile Include="Models\Mapping\PlanEntryMap.cs" />
     <Compile Include="Models\Plan.cs" />
     <Compile Include="Models\PlanEntry.cs" />
     <Compile Include="Models\FuzzyRule.cs" />
@@ -237,6 +248,7 @@
     <Compile Include="ViewModels\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\YearTableViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -324,6 +336,16 @@
     <Content Include="Views\Rules\Create.cshtml" />
     <Content Include="Views\Rules\Edit.cshtml" />
     <Content Include="Views\Rules\_TermDialog.cshtml" />
+    <Content Include="Views\Plan\Index.cshtml" />
+    <Content Include="Views\Plan\_PlanList.cshtml" />
+    <Content Include="Views\Plan\Edit.cshtml" />
+    <Content Include="Views\Plan\Create.cshtml" />
+    <Content Include="Views\Plan\YearPlan.cshtml" />
+    <Content Include="Views\Plan\_YearTable.cshtml" />
+    <Content Include="Views\Plan\_YearTableRow.cshtml" />
+    <Content Include="Views\Plan\MonthPlan.cshtml" />
+    <Content Include="Views\Plan\_MonthTable.cshtml" />
+    <Content Include="Views\Plan\_MonthTableRow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,6 +375,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506041348234_ConclusionForeignKey.resx">
       <DependentUpon>201506041348234_ConclusionForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506051857118_PlanNameAndIgnoringCollection.resx">
+      <DependentUpon>201506051857118_PlanNameAndIgnoringCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506051859127_PlanEntryIgnoreCollection.resx">
+      <DependentUpon>201506051859127_PlanEntryIgnoreCollection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

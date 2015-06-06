@@ -26,6 +26,7 @@ namespace HFi.Models
             modelBuilder.Configurations.Add(new TransactionMap());
             modelBuilder.Configurations.Add(new CategoryMap());
             modelBuilder.Configurations.Add(new RuleMap());
+            modelBuilder.Configurations.Add(new PlanEntryMap());
             base.OnModelCreating(modelBuilder);
         }
 

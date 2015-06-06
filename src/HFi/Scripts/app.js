@@ -20,6 +20,41 @@ $(function () {
     });
 
 
+    //setup year plan edit dialog
+    $('#year-plan-entry-edit').on('show.bs.modal', function (e) {
+        var link = $(e.relatedTarget);
+        var month = link.data("month");
+        var sum = link.data("sum");
+        var category = link.data("category-id");
+        var modal = $(this);
+        modal.find('#month').val(month);
+        modal.find('#categoryId').val(category);
+        modal.find('#budget').val(sum);
+
+    });
+
+    $('#year-plan-entry-edit').on('shown.bs.modal', function (e) {
+        $(this).find('#budget').select().focus();
+    });
+
+    //setup month plan edit dialog
+    $('#month-plan-entry-edit').on('show.bs.modal', function (e) {
+        var link = $(e.relatedTarget);
+        var day = link.data("day");
+        var sum = link.data("sum");
+        var category = link.data("category-id");
+        var modal = $(this);
+        modal.find('#day').val(day);
+        modal.find('#categoryId').val(category);
+        modal.find('#budget').val(sum);
+
+    });
+
+    $('#year-plan-entry-edit').on('shown.bs.modal', function (e) {
+        $(this).find('#budget').select().focus();
+    });
+
+
     // proposition editor
     function ExpressionEditor() {
 
@@ -130,6 +165,8 @@ $(function () {
         }
     }
 
-    var expressionEditor = new ExpressionEditor();
-    expressionEditor.setup();
+    if ($("#Proposition").length > 0) {
+        var expressionEditor = new ExpressionEditor();
+        expressionEditor.setup();
+    }
 })

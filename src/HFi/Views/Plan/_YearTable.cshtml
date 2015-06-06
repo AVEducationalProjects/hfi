@@ -1,0 +1,21 @@
+﻿@model HFi.ViewModels.YearTableViewModel
+
+@{
+//var monthes = new []{"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"};
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Категория</th>
+            @for (int i = 1; i <= 12; i++)
+            {
+                <th>@Html.ActionLink(i.ToString(), "MonthPlan", new { Id= ViewBag.PlanId, month = i })</th>
+            }
+            <th>Итого</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.Partial("_YearTableRow", Model, new ViewDataDictionary { { "Category", Model.RootCategory }, { "Level", 0 } })
+    </tbody>
+</table>

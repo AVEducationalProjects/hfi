@@ -1,0 +1,48 @@
+﻿@using HFi.ViewModels
+@model HFi.Models.Plan
+
+@{
+    var monthTable = (MonthTableViewModel) ViewBag.MonthTable;
+    var monthes = new []{"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"};
+    ViewBag.Title = Model.Year + " - " + Model.Name + "(" + monthes[monthTable.Month] + ")";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div id="month-plan-container">
+    @Html.Partial("_MonthTable", monthTable)
+</div>
+
+<div>
+    @Html.ActionLink("назад", "YearPlan", new {Id= Model.Id})
+</div>
+
+<div id="month-plan-entry-edit" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Введите сумму</h4>
+            </div>
+            @using (Ajax.BeginForm("SetMonthBudget", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "month-plan-container", OnSuccess = "$('#month-plan-entry-edit').modal('hide');" }))
+            {
+                <div class="modal-body form-horizontal">
+
+                    <div class="form-group">
+                        @Html.HiddenFor(x => x.Id)
+                        @Html.Hidden("month", monthTable.Month)
+                        @Html.Hidden("categoryId")
+                        @Html.Hidden("day")
+                        @Html.Label("Бюджет", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("budget", "0", new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

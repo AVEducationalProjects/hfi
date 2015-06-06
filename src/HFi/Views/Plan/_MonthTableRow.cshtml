@@ -1,0 +1,29 @@
+﻿@using HFi.Models
+@model HFi.ViewModels.MonthTableViewModel
+
+@{
+    var category = (Category)ViewData["Category"];
+    var level = (int)ViewData["Level"];
+    var begin = (int)ViewData["Begin"];
+    var end = (int)ViewData["End"];
+}
+
+<tr>
+    <td>
+        @for (int i = begin; i < end; i++)
+        {
+            <text> &nbsp; </text>
+        }
+        @category.Name
+    </td>
+    @for (int i = begin; i <= end; i++)
+    {
+        <td data-toggle="modal" data-target="#month-plan-entry-edit" data-day="@i" data-category-id="@category.Id" data-sum="@Model[i, category]">@String.Format("{0:C0}", Model[i, category])</td>
+    }
+    <td>@String.Format("{0:C0}", Model[category])</td>
+</tr>
+
+@foreach (var subcategory in category.Children)
+{
+    @Html.Partial("_MonthTableRow", Model, new ViewDataDictionary { { "Category", subcategory }, { "Level", level + 1 }, { "Begin", begin }, { "End", end } })
+}

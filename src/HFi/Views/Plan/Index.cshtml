@@ -1,0 +1,14 @@
+﻿@model IList<HFi.Models.Plan>
+@{
+    ViewBag.Title = "Список планов";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div id="plans-container">
+    @Html.Partial("_PlanList", Model)
+</div>

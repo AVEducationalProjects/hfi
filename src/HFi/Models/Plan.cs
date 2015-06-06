@@ -7,6 +7,8 @@ namespace HFi.Models
     {
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
         public int Year { get; set; }
 
         public DateTime LastChanged { get; set; }

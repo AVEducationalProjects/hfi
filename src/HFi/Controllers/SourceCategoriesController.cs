@@ -21,7 +21,7 @@ namespace HFi.Controllers
             return View(await db.SourceCategories.ToListAsync());
         }
 
-        // GET: SourceCategories/Details/5
+        // GET: SourceCategories/YearPlan/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)

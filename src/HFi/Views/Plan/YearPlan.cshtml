@@ -1,0 +1,46 @@
+﻿@using HFi.ViewModels
+@model HFi.Models.Plan
+
+@{
+    ViewBag.Title = Model.Year + " - " + Model.Name;
+    ViewBag.PlanId = Model.Id;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div id="year-plan-container">
+    @Html.Partial("_YearTable", (YearTableViewModel) ViewBag.YearTable)
+</div>
+
+<div>
+    @Html.ActionLink("назад", "Index")
+</div>
+
+<div id="year-plan-entry-edit" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Введите сумму</h4>
+            </div>
+            @using (Ajax.BeginForm("SetYearBudget", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "year-plan-container", OnSuccess = "$('#year-plan-entry-edit').modal('hide');" }))
+            {
+                <div class="modal-body form-horizontal">
+
+                    <div class="form-group">
+                        @Html.HiddenFor(x=>x.Id)
+                        @Html.Hidden("month")
+                        @Html.Hidden("categoryId")
+                        @Html.Label("Бюджет", new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            @Html.TextBox("budget", "0", new {@class = "form-control"})
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Отменить</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
