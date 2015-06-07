@@ -1,4 +1,5 @@
-﻿<div id="expression-add" class="modal fade">
+﻿@using HFi.Models
+<div id="expression-add" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -45,8 +46,11 @@
                         </div>
 
                         <div id="source-tab" class="tab-pane">
-                            <div style="padding: 10px;">
-                                <a href="#" role="button" class="btn btn-success">Операция И</a>
+                            <div  class="col-md-5" style="padding: 10px;">
+                                @foreach (SourceCategory sourceCategory in ViewBag.SourceCategories)
+                                {
+                                    <a href="#" role="button" class="btn btn-success term-button" data-json='{"type":"atomic", "name":"@sourceCategory.Name"}'>@sourceCategory.Name</a>
+                                }
                             </div>
                         </div>
                     </div>

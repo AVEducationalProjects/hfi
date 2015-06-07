@@ -74,13 +74,19 @@ namespace HFi.Models.Fuzzy
     {
         public SourceCategory SourceCategory { get; private set; }
        
-        private readonly Dictionary<string, double> _table = new Dictionary<string, double>(); 
+        private readonly Dictionary<string, double> _table = new Dictionary<string, double>();
+
+        public SourceTerm(SourceCategory sourceCategory, Dictionary<string, double> table)
+        {
+            SourceCategory = sourceCategory;
+            _table = table;
+        }
 
         public override double Calculate(Transaction transaction)
         {
             if (_table.ContainsKey(transaction.Source))
                 return _table[transaction.Source];
-            return 0.5;
+            return 0;
         }
     }
 }

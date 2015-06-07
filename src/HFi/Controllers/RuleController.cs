@@ -36,6 +36,7 @@ namespace HFi.Controllers
         {
             var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
             ViewBag.Categories = user.RootCategory.ToSelectList();
+            ViewBag.SourceCategories = db.SourceCategories.ToList();
             return View(new FuzzyRule());
         }
 
@@ -68,6 +69,7 @@ namespace HFi.Controllers
             var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
             var rule = user.Rules.First(x => x.Id == id);
             ViewBag.Categories = user.RootCategory.ToSelectList();
+            ViewBag.SourceCategories = db.SourceCategories.ToList();
             return View(rule);
         }
 

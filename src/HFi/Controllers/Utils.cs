@@ -28,5 +28,20 @@ namespace HFi.Controllers
             list.AddRange(e.Children.SelectMany(x => x.Flatten()));
             return list;
         }
+
+
+        public static Category FindByName(this Category root, string name)
+        {
+            if (root.Name == name)
+                return root;
+
+            foreach (var cat in root.Children)
+            {
+                var res = cat.FindByName(name);
+                if (res != null)
+                    return res;
+            }
+            return null;
+        }
     }
 }

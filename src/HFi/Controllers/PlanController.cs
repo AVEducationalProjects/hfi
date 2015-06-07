@@ -8,11 +8,14 @@ using System.Web;
 using System.Web.Mvc;
 using HFi.Models;
 using HFi.ViewModels;
+using MathNet.Numerics;
+using MathNet.Numerics.LinearAlgebra.Double;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace HFi.Controllers
 {
+    [Authorize]
     public class PlanController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -129,7 +132,7 @@ namespace HFi.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Name,Year")] Plan plan)
+        public async Task<ActionResult> Create([Bind(Include = "Name,Year")] Plan plan, bool useData = false)
         {
             if (ModelState.IsValid)
             {
@@ -137,10 +140,128 @@ namespace HFi.Controllers
                 plan.LastChanged = DateTime.Now; ;
                 user.Plans.Add(plan);
                 await db.SaveChangesAsync();
+
+                if (useData)
+                {
+                    await BuildPlanUsingData(plan, plan.Year - 1);
+                    await db.SaveChangesAsync();
+                }
+
                 return RedirectToAction("Index");
             }
 
             return View(plan);
+        }
+
+        private async Task BuildPlanUsingData(Plan plan, int year)
+        {
+            var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
+            var transactionGroups = user.Transactions.Where(x => x.Date.Year == year).GroupBy(x => x.Category).ToList();
+
+            var forecast = transactionGroups.Select(group =>
+            {
+                var amountPerMonth = group.GroupBy(t => t.Date.Month).ToDictionary(t => t.Key, t => t.Sum(z => z.Amount));
+                var xdata = new double[12];
+                var ydata = new double[12];
+                for (int i = 0; i < 12; i++)
+                {
+                    if (amountPerMonth.ContainsKey(i))
+                        xdata[i] = (double)amountPerMonth[i];
+                    ydata[i] = i;
+                }
+
+                var p = Fit.Line(xdata, ydata);
+                return new { Category = group.Key, Trend = p.Item2 * (double)group.Sum(x => x.Amount) };
+            }).ToDictionary(x => x.Category, x => x.Trend);
+
+            var yearPatterns = transactionGroups.Select(group =>
+            {
+                var amountPerMonth = group.GroupBy(t => t.Date.Month).ToDictionary(t => t.Key, t => t.Sum(z => z.Amount));
+                var total = (double)group.Sum(x => x.Amount);
+                var pattern = new double[12];
+                for (int i = 0; i < 12; i++)
+                {
+                    if (amountPerMonth.ContainsKey(12))
+                        pattern[i] = (double)amountPerMonth[i] / total;
+                }
+                return new { Category = group.Key, Pattern = pattern };
+            }).ToDictionary(x => x.Category, x => x.Pattern);
+
+            var weekPatterns = transactionGroups.Select(group =>
+            {
+                var pattern = new double[7];
+                var total = 0.0;
+                var days = 0;
+                var current = new DateTime(year, 12, 31);
+
+                while (current >= new DateTime(year, 1, 1))
+                {
+                    days++;
+                    var forgetness = (100 - days / 7) / 100.0;
+                    var value = (double)(group.Where(x => x.Date == current).Sum(x => x.Amount)) * forgetness;
+                    pattern[((int)current.DayOfWeek)] = value;
+                    total += value;
+                    current = current.AddDays(-1);
+                    days++;
+                }
+
+                for (int i = 0; i < 7; i++)
+                {
+                    pattern[i] /= total;
+                }
+                return new { Category = group.Key, Pattern = pattern };
+            }).ToDictionary(x => x.Category, x => x.Pattern);
+
+            var matrix = new Dictionary<Category, double[]>();
+            BuildMatrix(user.RootCategory, matrix, yearPatterns, weekPatterns, plan.Year);
+
+            foreach (var category in matrix.Keys)
+            {
+                var forecastedValue = (forecast.ContainsKey(category)) ? forecast[category] : 0;
+                var sum = matrix[category].Sum();
+
+                for (int i = 0; i < matrix[category].Length; i++)
+                {
+                    matrix[category][i] *= forecastedValue/sum;
+                }
+            }
+
+
+            foreach (var category in matrix.Keys)
+            {
+                for (int i = 0; i < matrix[category].Length; i++)
+                {
+                    if (matrix[category][i] > 0)
+                    {
+                        plan.Entries.Add(new PlanEntry() {Amount = Math.Round((decimal)matrix[category][i]), Category = category, Date = (new DateTime(plan.Year,1,1)).AddDays(i)});
+                    }
+                }
+            }
+
+            db.SaveChanges();
+        }
+
+        private void BuildMatrix(Category rootCategory, Dictionary<Category, double[]> matrix, Dictionary<Category, double[]> yearPatterns, Dictionary<Category, double[]> weekPatterns, int year)
+        {
+            var values = new double[DateTime.IsLeapYear(year) ? 366 : 365];
+            var current = new DateTime(year, 1, 1);
+            while (current <= new DateTime(year, 12, 31))
+            {
+                var dayofweek = ((int) current.DayOfWeek);
+                var month = current.Month;
+                var dayofyear = current.DayOfYear;
+
+                values[dayofyear - 1] = weekPatterns[rootCategory][dayofweek]*yearPatterns[rootCategory][month];
+
+                current = current.AddDays(1);
+            }
+
+            matrix[rootCategory] = values;
+
+            foreach (var category in rootCategory.Children)
+            {
+                BuildMatrix(category, matrix, yearPatterns, weekPatterns, year);
+            }
         }
 
         public async Task<ActionResult> Edit(int? id)

@@ -2,6 +2,24 @@
 var current = null;
 
 $(function () {
+    //setup auto category
+    $("#autocategory").click(function() {
+        var source = $("#Source").val();
+        var date = $("#Date").val();
+        var amount = $("#Amount").val();
+
+        $.ajax({
+            url: "/Transactions/Autocategory",
+            data: {
+                "source": source,
+                "date": date,
+                "amount": amount
+            }
+        }).done(function(id) {
+            $("#CategoryId").val(id);
+        });
+    });
+
     //setup category dialog
     $('#category-edit').on('show.bs.modal', function (e) {
         var link = $(e.relatedTarget);

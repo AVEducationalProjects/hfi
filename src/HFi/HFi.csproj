@@ -52,12 +52,18 @@
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MathNet.Numerics, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.3.7.0\lib\net40\MathNet.Numerics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -166,6 +172,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PrepareController.cs" />
+    <Compile Include="Migrations\201506061131524_PlanDeletionCascade.cs" />
+    <Compile Include="Migrations\201506061131524_PlanDeletionCascade.Designer.cs">
+      <DependentUpon>201506061131524_PlanDeletionCascade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506061938257_SoureceAndSourceCategories.cs" />
+    <Compile Include="Migrations\201506061938257_SoureceAndSourceCategories.Designer.cs">
+      <DependentUpon>201506061938257_SoureceAndSourceCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mapping\PlanMap.cs" />
+    <Compile Include="Models\SourceCategoryToSource.cs" />
     <Compile Include="ViewModels\MonthTableViewModel.cs" />
     <Compile Include="Controllers\PlanController.cs" />
     <Compile Include="Controllers\RuleBuilder.cs" />
@@ -349,6 +366,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Prepare\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -381,6 +399,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506051859127_PlanEntryIgnoreCollection.resx">
       <DependentUpon>201506051859127_PlanEntryIgnoreCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506061131524_PlanDeletionCascade.resx">
+      <DependentUpon>201506061131524_PlanDeletionCascade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506061938257_SoureceAndSourceCategories.resx">
+      <DependentUpon>201506061938257_SoureceAndSourceCategories.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,6 +15,8 @@ namespace HFi.Models
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<SourceCategory> SourceCategories { get; set; }
+
+        public DbSet<Source> Sources { get; set; }
         
         public static ApplicationDbContext Create()
         {
@@ -26,6 +28,7 @@ namespace HFi.Models
             modelBuilder.Configurations.Add(new TransactionMap());
             modelBuilder.Configurations.Add(new CategoryMap());
             modelBuilder.Configurations.Add(new RuleMap());
+            modelBuilder.Configurations.Add(new PlanMap());
             modelBuilder.Configurations.Add(new PlanEntryMap());
             base.OnModelCreating(modelBuilder);
         }
@@ -33,5 +36,9 @@ namespace HFi.Models
         public System.Data.Entity.DbSet<HFi.Models.Transaction> Transactions { get; set; }
 
         public System.Data.Entity.DbSet<HFi.Models.FuzzyRule> Rules { get; set; }
+
+        public System.Data.Entity.DbSet<HFi.Models.Plan> Plans { get; set; }
+
+        public System.Data.Entity.DbSet<HFi.Models.SourceCategoryToSource> SourceCategoryToSources { get; set; }
     }
 }

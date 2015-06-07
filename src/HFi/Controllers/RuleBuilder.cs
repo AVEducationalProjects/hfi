@@ -65,6 +65,11 @@ namespace HFi.Controllers
             _terms.Add("Средняя сумма", new AmountTerm(_user.NormalAmountTerm.A1, _user.NormalAmountTerm.A2, _user.NormalAmountTerm.A3, _user.NormalAmountTerm.A4));
             _terms.Add("Большая сумма", new AmountTerm(_user.LargeAmountTerm.A1, _user.LargeAmountTerm.A2, _user.LargeAmountTerm.A3, _user.LargeAmountTerm.A4));
 
+            foreach (var sourceCategory in _db.SourceCategories.ToList())
+            {
+                _terms.Add(sourceCategory.Name, new SourceTerm (sourceCategory, _user.SourceCategorySetup.Where(x=>x.SourceCategory==sourceCategory).Select(x=> new {Key=x.Source.Name, Value=x.Value}).ToDictionary(x=>x.Key, x=>x.Value)));
+            }
+
         }
     }
 }

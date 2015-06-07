@@ -29,6 +29,8 @@ namespace HFi.Models
 
         public virtual IList<Plan> Plans { get; set; }
 
+        public virtual IList<SourceCategoryToSource> SourceCategorySetup { get; set; }
+
         public ApplicationUser()
         {
             ABitAmountTerm = new AmountTerm();

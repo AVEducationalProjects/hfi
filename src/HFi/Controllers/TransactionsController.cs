@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using HFi.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using WebGrease.Css.Extensions;
 
 namespace HFi.Controllers
 {
@@ -101,6 +102,18 @@ namespace HFi.Controllers
             db.Transactions.Remove(transaction);
             await db.SaveChangesAsync();
             return PartialView("_TransactionsList", user.Transactions);
+        }
+
+        public int? AutoCategory(string source, DateTime date, decimal amount)
+        {
+            var transaction = new Transaction {Amount = amount, Source = source, Date = date};
+            var user = userManager.FindById(User.Identity.GetUserId());
+            var ruleBuilder = new RuleBuilder(db, user);
+            user.Rules.ForEach(x=>x.BuildPropositionExpression(ruleBuilder));
+            var results = user.Rules.Select(x => new {Value = x.PropositionExpression.Calculate(transaction), Category = x.Conclusion});
+            if (results.Max(y => y.Value) < 0.1)
+                return null;
+            return results.First(x => x.Value == results.Max(y => y.Value)).Category.Id;
         }
 
         protected override void Dispose(bool disposing)
