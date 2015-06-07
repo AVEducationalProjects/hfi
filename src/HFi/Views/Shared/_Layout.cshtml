@@ -25,6 +25,7 @@
                     <li>@Html.ActionLink("Категории", "Index", "Categories")</li>
                     <li>@Html.ActionLink("Правила", "Index", "Rules")</li>
                     <li>@Html.ActionLink("Планы", "Index", "Plan")</li>
+                    <li>@Html.ActionLink("Отчет за прошлый год", "YearReport", "Report", new {year = DateTime.Now.Year-1}, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

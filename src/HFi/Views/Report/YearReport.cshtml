@@ -1,0 +1,23 @@
+﻿@model HFi.ViewModels.YearReportViewModel
+
+@{
+    ViewBag.Title = "Отчет за " + Model.Year +" год";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Категория</th>
+            @for (int i = 1; i <= 12; i++)
+            {
+                <th>@i.ToString()</th>
+            }
+            <th>Итого</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.Partial("_YearReportRow", Model, new ViewDataDictionary { { "Category", Model.RootCategory }, { "Level", 0 } })
+    </tbody>
+</table>

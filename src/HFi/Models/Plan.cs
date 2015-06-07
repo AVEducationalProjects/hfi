@@ -14,5 +14,10 @@ namespace HFi.Models
         public DateTime LastChanged { get; set; }
 
         public virtual IList<PlanEntry> Entries { get; set; }
+
+        public Plan()
+        {
+            Entries = new List<PlanEntry>();
+        }
     }
 }

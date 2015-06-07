@@ -166,12 +166,12 @@ namespace HFi.Controllers
                 for (int i = 0; i < 12; i++)
                 {
                     if (amountPerMonth.ContainsKey(i))
-                        xdata[i] = (double)amountPerMonth[i];
-                    ydata[i] = i;
+                        ydata[i] = (double)amountPerMonth[i];
+                    xdata[i] = i;
                 }
 
                 var p = Fit.Line(xdata, ydata);
-                return new { Category = group.Key, Trend = p.Item2 * (double)group.Sum(x => x.Amount) };
+                return new { Category = group.Key, Trend = (double)group.Sum(x => x.Amount) + p.Item2 * 12 };
             }).ToDictionary(x => x.Category, x => x.Trend);
 
             var yearPatterns = transactionGroups.Select(group =>
@@ -181,8 +181,8 @@ namespace HFi.Controllers
                 var pattern = new double[12];
                 for (int i = 0; i < 12; i++)
                 {
-                    if (amountPerMonth.ContainsKey(12))
-                        pattern[i] = (double)amountPerMonth[i] / total;
+                    if (amountPerMonth.ContainsKey(i + 1))
+                        pattern[i] = (double)amountPerMonth[i + 1] / total;
                 }
                 return new { Category = group.Key, Pattern = pattern };
             }).ToDictionary(x => x.Category, x => x.Pattern);
@@ -199,7 +199,7 @@ namespace HFi.Controllers
                     days++;
                     var forgetness = (100 - days / 7) / 100.0;
                     var value = (double)(group.Where(x => x.Date == current).Sum(x => x.Amount)) * forgetness;
-                    pattern[((int)current.DayOfWeek)] = value;
+                    pattern[((int)current.DayOfWeek)] += value;
                     total += value;
                     current = current.AddDays(-1);
                     days++;
@@ -220,9 +220,12 @@ namespace HFi.Controllers
                 var forecastedValue = (forecast.ContainsKey(category)) ? forecast[category] : 0;
                 var sum = matrix[category].Sum();
 
-                for (int i = 0; i < matrix[category].Length; i++)
+                if (sum != 0)
                 {
-                    matrix[category][i] *= forecastedValue/sum;
+                    for (int i = 0; i < matrix[category].Length; i++)
+                    {
+                        matrix[category][i] *= forecastedValue / sum;
+                    }
                 }
             }
 
@@ -233,7 +236,12 @@ namespace HFi.Controllers
                 {
                     if (matrix[category][i] > 0)
                     {
-                        plan.Entries.Add(new PlanEntry() {Amount = Math.Round((decimal)matrix[category][i]), Category = category, Date = (new DateTime(plan.Year,1,1)).AddDays(i)});
+                        plan.Entries.Add(new PlanEntry()
+                        {
+                            Amount = Math.Round((decimal)matrix[category][i]),
+                            Category = category,
+                            Date = (new DateTime(plan.Year, 1, 1)).AddDays(i)
+                        });
                     }
                 }
             }
@@ -244,16 +252,20 @@ namespace HFi.Controllers
         private void BuildMatrix(Category rootCategory, Dictionary<Category, double[]> matrix, Dictionary<Category, double[]> yearPatterns, Dictionary<Category, double[]> weekPatterns, int year)
         {
             var values = new double[DateTime.IsLeapYear(year) ? 366 : 365];
-            var current = new DateTime(year, 1, 1);
-            while (current <= new DateTime(year, 12, 31))
+
+            if (yearPatterns.ContainsKey(rootCategory) && weekPatterns.ContainsKey(rootCategory))
             {
-                var dayofweek = ((int) current.DayOfWeek);
-                var month = current.Month;
-                var dayofyear = current.DayOfYear;
+                var current = new DateTime(year, 1, 1);
+                while (current <= new DateTime(year, 12, 31))
+                {
+                    var dayofweek = ((int)current.DayOfWeek);
+                    var month = current.Month;
+                    var dayofyear = current.DayOfYear;
 
-                values[dayofyear - 1] = weekPatterns[rootCategory][dayofweek]*yearPatterns[rootCategory][month];
+                    values[dayofyear - 1] = weekPatterns[rootCategory][dayofweek] * yearPatterns[rootCategory][month - 1];
 
-                current = current.AddDays(1);
+                    current = current.AddDays(1);
+                }
             }
 
             matrix[rootCategory] = values;
@@ -334,6 +346,21 @@ namespace HFi.Controllers
                 }
                 return new List<Category>();
             }
+        }
+
+        public async Task<ActionResult> ShowProgress(int id)
+        {
+            var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
+            var plan = user.Plans.Single(x => x.Id == id);
+            var year = plan.Year;
+
+            SetupPlanEntrySubEntries(plan, user.RootCategory);
+
+            ViewBag.YearPlanTable = new YearTableViewModel(user.RootCategory, plan.Entries.ToList());
+            ViewBag.YearFactTable = new YearReportViewModel(year, user.RootCategory, user.Transactions.Where(x => x.Date.Year == year).ToList());
+
+
+            return View(plan);
         }
     }
 }

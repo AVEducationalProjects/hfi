@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
-using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using HFi.Models;
 using Microsoft.AspNet.Identity;
@@ -28,7 +25,7 @@ namespace HFi.Controllers
         public async Task<ActionResult> Index()
         {
             var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
-            return View(user.Transactions);
+            return View(user.Transactions.OrderByDescending(x=>x.Date));
         }
 
 
@@ -37,7 +34,7 @@ namespace HFi.Controllers
         {
             var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
             ViewBag.Categories = user.RootCategory.ToSelectList();
-            return View();
+            return View(new Transaction {Date = DateTime.Now.Date});
         }
 
         // POST: Transactions/Create

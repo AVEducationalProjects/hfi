@@ -1,0 +1,39 @@
+﻿@using HFi.Models
+@using HFi.ViewModels
+@model dynamic
+
+@{
+    var category = (Category)ViewData["Category"];
+    var level = (int)ViewData["Level"];
+    var planTable = (YearTableViewModel)ViewData["YearPlanTable"];
+    var factTable = (YearReportViewModel)ViewData["YearFactTable"];
+}
+
+<tr>
+    <td rowspan="2">
+        @for (int i = 0; i < level; i++)
+        {
+            <text> &nbsp; </text>
+        }
+        @category.Name
+    </td>
+    @for (int i = 1; i <= 12; i++)
+    {
+        <td>@String.Format("{0:C0}", factTable[i, category])</td>
+    }
+    <td>@String.Format("{0:C0}", factTable[category])</td>
+</tr>
+<tr>
+    
+    @for (int i = 1; i <= 12; i++)
+    {
+        <td>@String.Format("{0:C0}", planTable[i, category])</td>
+    }
+    <td>@String.Format("{0:C0}", planTable[category])</td>
+</tr>
+
+
+@foreach (var subcategory in category.Children)
+{
+    @Html.Partial("_ShowProgressTableRow", new ViewDataDictionary { { "Category", subcategory }, { "Level", level + 1 }, { "YearPlanTable", planTable }, { "YearFactTable", factTable }})
+}

@@ -266,6 +266,8 @@
     <Compile Include="ViewModels\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\YearTableViewModel.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="ViewModels\YearReportViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -363,6 +365,10 @@
     <Content Include="Views\Plan\MonthPlan.cshtml" />
     <Content Include="Views\Plan\_MonthTable.cshtml" />
     <Content Include="Views\Plan\_MonthTableRow.cshtml" />
+    <Content Include="Views\Report\YearReport.cshtml" />
+    <Content Include="Views\Report\_YearReportRow.cshtml" />
+    <Content Include="Views\Plan\ShowProgress.cshtml" />
+    <Content Include="Views\Plan\_ShowProgressTableRow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

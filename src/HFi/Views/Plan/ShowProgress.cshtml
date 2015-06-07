@@ -1,0 +1,23 @@
+﻿@model HFi.Models.Plan
+
+@{
+    ViewBag.Title = "Выполнение бюджета за " + Model.Year + " год";
+}
+
+<h2>@ViewBag.Title </h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Категория</th>
+            @for (int i = 1; i <= 12; i++)
+            {
+                <th>@i.ToString()</th>
+            }
+            <th>Итого</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.Partial("_ShowProgressTableRow", new ViewDataDictionary { { "Category", ViewBag.YearPlanTable.RootCategory }, { "Level", 0 }, { "YearPlanTable", ViewBag.YearPlanTable }, { "YearFactTable", ViewBag.YearFactTable } })
+    </tbody>
+</table>

@@ -4,7 +4,7 @@
 @{
     var monthTable = (MonthTableViewModel) ViewBag.MonthTable;
     var monthes = new []{"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"};
-    ViewBag.Title = Model.Year + " - " + Model.Name + "(" + monthes[monthTable.Month] + ")";
+    ViewBag.Title = Model.Year + " - " + Model.Name + "(" + monthes[monthTable.Month-1] + ")";
 }
 
 <h2>@ViewBag.Title</h2>

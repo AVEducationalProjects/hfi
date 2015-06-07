@@ -32,20 +32,190 @@ namespace HFi.Controllers
             SetupAmountTerms();
             SetupSourceCategory();
             SetupRules();
+            CreateTransactions(DateTime.Now.Year - 1);
 
             return RedirectToAction("Index", "Transactions");
         }
 
+        private void CreateTransactions(int year)
+        {
+            var rand = new Random();
+            var current = new DateTime(year, 1, 1);
+            #region Зима    
+            while (current <= new DateTime(year, 4, 1))
+            {
+
+                if (current.Day == 5)
+                {
+                    user.Transactions.Add(new Transaction { Amount = 670, Date = current, Source = "ИП Никитина", Purpose = "Квартплата", Category = user.RootCategory.FindByName("Квартира") });
+                    user.Transactions.Add(new Transaction { Amount = 3700, Date = current, Source = "Астрахань водоканал", Purpose = "Оплата электроэнергии по счетчику", Category = user.RootCategory.FindByName("Электричество") });
+                    user.Transactions.Add(new Transaction { Amount = rand.Next(250, 350), Date = current, Source = "Коммунэнерго", Purpose = "Оплата воды и отопления", Category = user.RootCategory.FindByName("Водоснабжение") });
+                }
+
+                if (current.DayOfWeek != DayOfWeek.Sunday && current.DayOfWeek != DayOfWeek.Saturday)
+                {
+                    user.Transactions.Add(new Transaction
+                    {
+                        Amount = rand.Next(200, 400),
+                        Date = current,
+                        Source = "Кафе Даир",
+                        Purpose = "",
+                        Category = user.RootCategory.FindByName("Бизнес ланч")
+                    });
+                }
+
+                if (current.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    user.Transactions.Add(new Transaction
+                    {
+                        Amount = rand.Next(1000, 2000),
+                        Date = current,
+                        Source = "Окей",
+                        Purpose = "",
+                        Category = user.RootCategory.FindByName("Продукты")
+                    });
+                }
+                else
+                {
+                    if (rand.Next(3) >= 2)
+                    {
+                        user.Transactions.Add(new Transaction
+                        {
+                            Amount = rand.Next(200, 1000),
+                            Date = current,
+                            Source = new[] { "Окей", "Лента", "Метро" }[rand.Next(0, 2)],
+                            Purpose = "",
+                            Category = user.RootCategory.FindByName("Продукты")
+                        });
+                    }
+                }
+
+                current = current.AddDays(1);
+            }
+
+            #endregion
+
+            #region Лето    
+            while (current <= new DateTime(year, 10, 1))
+            {
+
+                if (current.Day == 5)
+                {
+                    user.Transactions.Add(new Transaction { Amount = 670, Date = current, Source = "ИП Никитина", Purpose = "Квартплата", Category = user.RootCategory.FindByName("Квартира") });
+                    user.Transactions.Add(new Transaction { Amount = 1500, Date = current, Source = "Астрахань водоканал", Purpose = "Оплата электроэнергии по счетчику", Category = user.RootCategory.FindByName("Электричество") });
+                    user.Transactions.Add(new Transaction { Amount = rand.Next(300, 500), Date = current, Source = "Коммунэнерго", Purpose = "Оплата воды и отопления", Category = user.RootCategory.FindByName("Водоснабжение") });
+                }
+
+                if (current.DayOfWeek != DayOfWeek.Sunday && current.DayOfWeek != DayOfWeek.Saturday)
+                {
+                    user.Transactions.Add(new Transaction
+                    {
+                        Amount = rand.Next(250, 350),
+                        Date = current,
+                        Source = "Кафе Даир",
+                        Purpose = "",
+                        Category = user.RootCategory.FindByName("Бизнес ланч")
+                    });
+                }
+
+                if (current.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    user.Transactions.Add(new Transaction
+                    {
+                        Amount = rand.Next(1000, 2000),
+                        Date = current,
+                        Source = "Окей",
+                        Purpose = "",
+                        Category = user.RootCategory.FindByName("Продукты")
+                    });
+                }
+                else
+                {
+                    if (rand.Next(3) >= 2)
+                    {
+                        user.Transactions.Add(new Transaction
+                        {
+                            Amount = rand.Next(200, 500),
+                            Date = current,
+                            Source = new[] { "Окей", "Лента", "Метро" }[rand.Next(0, 2)],
+                            Purpose = "",
+                            Category = user.RootCategory.FindByName("Продукты")
+                        });
+                    }
+                }
+
+                current = current.AddDays(1);
+            }
+
+            #endregion
+
+            #region Осень    
+            while (current < new DateTime(year+1, 1, 1))
+            {
+
+                if (current.Day == 5)
+                {
+                    user.Transactions.Add(new Transaction { Amount = 700, Date = current, Source = "ИП Никитина", Purpose = "Квартплата", Category = user.RootCategory.FindByName("Квартира") });
+                    user.Transactions.Add(new Transaction { Amount = 4000, Date = current, Source = "Астрахань водоканал", Purpose = "Оплата воды и отопления", Category = user.RootCategory.FindByName("Водоснабжение") });
+                    user.Transactions.Add(new Transaction { Amount = rand.Next(300, 350), Date = current, Source = "Коммунэнерго", Purpose = "Оплата электроэнергии по счетчику", Category = user.RootCategory.FindByName("Электричество") });
+                }
+
+                if (current.DayOfWeek != DayOfWeek.Sunday && current.DayOfWeek != DayOfWeek.Saturday)
+                {
+                    user.Transactions.Add(new Transaction
+                    {
+                        Amount = rand.Next(250, 450),
+                        Date = current,
+                        Source = "Кафе Даир",
+                        Purpose = "",
+                        Category = user.RootCategory.FindByName("Бизнес ланч")
+                    });
+                }
+
+                if (current.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    user.Transactions.Add(new Transaction
+                    {
+                        Amount = rand.Next(1500, 2500),
+                        Date = current,
+                        Source = "Окей",
+                        Purpose = "",
+                        Category = user.RootCategory.FindByName("Продукты")
+                    });
+                }
+                else
+                {
+                    if (rand.Next(3) >= 2)
+                    {
+                        user.Transactions.Add(new Transaction
+                        {
+                            Amount = rand.Next(350, 1500),
+                            Date = current,
+                            Source = new[] { "Окей", "Лента", "Метро" }[rand.Next(0,2)],
+                            Purpose = "",
+                            Category = user.RootCategory.FindByName("Продукты")
+                        });
+                    }
+                }
+
+                current = current.AddDays(1);
+            }
+
+            #endregion
+
+            db.SaveChanges();
+        }
+
         private void SetupRules()
         {
-            user.Rules.Add(new FuzzyRule {Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Маленькая сумма\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"}]},{\"type\":\"atomic\",\"name\":\"Заведения общественного питания\"}]}", Conclusion = user.RootCategory.FindByName("Бизнес ланч") });
-            user.Rules.Add(new FuzzyRule {Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Мелкая розница\"},{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Маленькая сумма\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"}]}]}", Conclusion = user.RootCategory.FindByName("Продукты") });
-            user.Rules.Add(new FuzzyRule {Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Супермаркет товаров повседневного спроса\"},{\"type\":\"atomic\",\"name\":\"Конец недели\"},{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Маленькая сумма\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"},{\"type\":\"atomic\",\"name\":\"Средняя сумма\"}]}]}", Conclusion = user.RootCategory.FindByName("Продукты") });
-            user.Rules.Add(new FuzzyRule {Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Службы быта\"},{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Маленькая сумма\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"},{\"type\":\"atomic\",\"name\":\"Средняя сумма\"}]}]}", Conclusion = user.RootCategory.FindByName("Коммунальные услуги") });
-            user.Rules.Add(new FuzzyRule {Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Супермаркет хозяйственных товаров\"}]}", Conclusion = user.RootCategory.FindByName("Товары для быта") });
-            user.Rules.Add(new FuzzyRule {Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Супермаркет товаров повседневного спроса\"},{\"type\":\"atomic\",\"name\":\"Конец месяца\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"}]}", Conclusion = user.RootCategory.FindByName("Товары для быта") });
-            user.Rules.Add(new FuzzyRule {Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Банки\"}]}", Conclusion = user.RootCategory.FindByName("Кредиты") });
-            user.Rules.Add(new FuzzyRule {Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Прочее\"},{\"type\":\"atomic\",\"name\":\"Конец месяца\"},{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"},{\"type\":\"atomic\",\"name\":\"Средняя сумма\"}]}]}", Conclusion = user.RootCategory.FindByName("Книги") });
+            user.Rules.Add(new FuzzyRule { Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Маленькая сумма\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"}]},{\"type\":\"atomic\",\"name\":\"Заведения общественного питания\"}]}", Conclusion = user.RootCategory.FindByName("Бизнес ланч") });
+            user.Rules.Add(new FuzzyRule { Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Мелкая розница\"},{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Маленькая сумма\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"}]}]}", Conclusion = user.RootCategory.FindByName("Продукты") });
+            user.Rules.Add(new FuzzyRule { Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Супермаркет товаров повседневного спроса\"},{\"type\":\"atomic\",\"name\":\"Конец недели\"},{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Маленькая сумма\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"},{\"type\":\"atomic\",\"name\":\"Средняя сумма\"}]}]}", Conclusion = user.RootCategory.FindByName("Продукты") });
+            user.Rules.Add(new FuzzyRule { Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Службы быта\"},{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Маленькая сумма\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"},{\"type\":\"atomic\",\"name\":\"Средняя сумма\"}]}]}", Conclusion = user.RootCategory.FindByName("Коммунальные услуги") });
+            user.Rules.Add(new FuzzyRule { Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Супермаркет хозяйственных товаров\"}]}", Conclusion = user.RootCategory.FindByName("Товары для быта") });
+            user.Rules.Add(new FuzzyRule { Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Супермаркет товаров повседневного спроса\"},{\"type\":\"atomic\",\"name\":\"Конец месяца\"},{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"}]}", Conclusion = user.RootCategory.FindByName("Товары для быта") });
+            user.Rules.Add(new FuzzyRule { Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Банки\"}]}", Conclusion = user.RootCategory.FindByName("Кредиты") });
+            user.Rules.Add(new FuzzyRule { Proposition = "{\"type\":\"and\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Прочее\"},{\"type\":\"atomic\",\"name\":\"Конец месяца\"},{\"type\":\"or\",\"expressions\":[{\"type\":\"atomic\",\"name\":\"Небольшая сумма\"},{\"type\":\"atomic\",\"name\":\"Средняя сумма\"}]}]}", Conclusion = user.RootCategory.FindByName("Книги") });
 
             db.SaveChanges();
         }
@@ -150,7 +320,7 @@ namespace HFi.Controllers
             db.SaveChanges();
             user.Transactions.ToList().ForEach(x => db.Transactions.Remove(x));
             db.SaveChanges();
-            user.SourceCategorySetup.ToList().ForEach(x=>db.SourceCategoryToSources.Remove(x));
+            user.SourceCategorySetup.ToList().ForEach(x => db.SourceCategoryToSources.Remove(x));
             db.SaveChanges();
             user.RootCategory.Children.ToList().ForEach(RemoveCategory);
         }
