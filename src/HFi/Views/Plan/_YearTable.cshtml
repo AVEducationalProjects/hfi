@@ -10,7 +10,7 @@
             <th>Категория</th>
             @for (int i = 1; i <= 12; i++)
             {
-                <th>@Html.ActionLink(i.ToString(), "MonthPlan", new { Id= ViewBag.PlanId, month = i })</th>
+                <th>@Html.ActionLink(i.ToString(), "MonthPlan", new { Id = ViewBag.PlanId, month = i })</th>
             }
             <th>Итого</th>
         </tr>
@@ -18,4 +18,16 @@
     <tbody>
         @Html.Partial("_YearTableRow", Model, new ViewDataDictionary { { "Category", Model.RootCategory }, { "Level", 0 } })
     </tbody>
+    <tfoot>
+        <tr>
+            <td>
+                ИТОГО:
+            </td>
+            @for (int i = 1; i <= 12; i++)
+            {
+                <td class="@(Model[i]<=ViewBag.Salary?"":"red")">@String.Format("{0:C0}", Model[i])</td>
+            }
+            <td >@String.Format("{0:C0}", Model.Entries.Sum(x => x.Amount))</td>
+        </tr>
+    </tfoot>
 </table>

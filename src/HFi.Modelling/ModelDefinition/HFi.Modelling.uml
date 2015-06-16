@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="62c53e93-14d4-4f5b-8021-79cbb593d9f1"
   name="HFi.Modelling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -34,7 +34,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="39785890-2344-46f0-91e3-dbe82ee38c95"
-              LastKnownName="Изменение базы нечетких правил"
+              LastKnownName="Созлание бюджетного плана"
               LastKnownLocation="HFi.Modelling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -73,7 +73,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="61f1b580-5a3f-459e-82b6-1959e83451a3"
-              LastKnownName="Загрузка платежей из банковской выписки"
+              LastKnownName="Редактирование бюджетного плана"
               LastKnownLocation="HFi.Modelling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -112,7 +112,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="4efacd99-0a8c-428e-9a13-453231916727"
-              LastKnownName="Ввод платежей"
+              LastKnownName="Просмотр фактических затрат за предыдущий период"
               LastKnownLocation="HFi.Modelling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -151,7 +151,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="15801351-416c-4763-8568-d5167478a862"
-              LastKnownName="Просмотр отчетов по расходам"
+              LastKnownName="Просмотр выполнения бюджетного плана"
               LastKnownLocation="HFi.Modelling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -190,7 +190,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="938fbd0c-9b21-43a7-adfe-88d70f073051"
-              LastKnownName="Редактирование дерева категорий"
+              LastKnownName="Редактирование профиля пользователя"
               LastKnownLocation="HFi.Modelling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -226,7 +226,7 @@
     <packageHasNamedElement>
       <useCase
         Id="39785890-2344-46f0-91e3-dbe82ee38c95"
-        name="Изменение базы нечетких правил"
+        name="Созлание бюджетного плана"
         isAbstract="false"
         isLeaf="false">
         <additions>
@@ -237,13 +237,20 @@
               LastKnownName="Проверка правил на непротиворечивость"
               LastKnownLocation="HFi.Modelling.uml" />
           </include>
+          <include
+            Id="2fc9fabf-93d5-4fee-bc6e-d75771575122">
+            <useCaseMoniker
+              Id="61f1b580-5a3f-459e-82b6-1959e83451a3"
+              LastKnownName="Редактирование бюджетного плана"
+              LastKnownLocation="HFi.Modelling.uml" />
+          </include>
         </additions>
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="d65e7c86-35da-4f2c-b8cd-883751551d5e"
-        name="Редактирование параметров термов переменной &quot;Сумма платежа&quot;"
+        name="Создание плана на основе данных за прошлый период"
         isAbstract="false"
         isLeaf="false">
         <extendedCases>
@@ -251,7 +258,7 @@
             Id="39e2d9fa-f26a-4b89-8a5c-4b2263977526">
             <useCaseMoniker
               Id="39785890-2344-46f0-91e3-dbe82ee38c95"
-              LastKnownName="Изменение базы нечетких правил"
+              LastKnownName="Созлание бюджетного плана"
               LastKnownLocation="HFi.Modelling.uml" />
           </extend>
         </extendedCases>
@@ -274,24 +281,14 @@
     <packageHasNamedElement>
       <useCase
         Id="61f1b580-5a3f-459e-82b6-1959e83451a3"
-        name="Загрузка платежей из банковской выписки"
+        name="Редактирование бюджетного плана"
         isAbstract="false"
-        isLeaf="false">
-        <additions>
-          <include
-            Id="9d3cb934-1563-4ebf-9568-2f20f088f521">
-            <useCaseMoniker
-              Id="9a8c406e-e821-4f83-bad1-d98cd8d0f3dc"
-              LastKnownName="Автоматическая классификация платежей"
-              LastKnownLocation="HFi.Modelling.uml" />
-          </include>
-        </additions>
-      </useCase>
+        isLeaf="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="4efacd99-0a8c-428e-9a13-453231916727"
-        name="Ввод платежей"
+        name="Просмотр фактических затрат за предыдущий период"
         isAbstract="false"
         isLeaf="false">
         <additions>
@@ -308,22 +305,22 @@
     <packageHasNamedElement>
       <useCase
         Id="15801351-416c-4763-8568-d5167478a862"
-        name="Просмотр отчетов по расходам"
+        name="Просмотр выполнения бюджетного плана"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <useCase
         Id="4d0b1d0b-30c8-4817-91a0-7d086c224c91"
-        name="Ввод весов для классификации контрагента"
+        name="Редактирование бюджетного плана с детализацией на месяц"
         isAbstract="false"
         isLeaf="false">
         <extendedCases>
           <extend
-            Id="07717539-36da-4236-bbe6-0152b763c655">
+            Id="30376509-b546-4e9b-9cbb-e722c09c1519">
             <useCaseMoniker
-              Id="39785890-2344-46f0-91e3-dbe82ee38c95"
-              LastKnownName="Изменение базы нечетких правил"
+              Id="61f1b580-5a3f-459e-82b6-1959e83451a3"
+              LastKnownName="Редактирование бюджетного плана"
               LastKnownLocation="HFi.Modelling.uml" />
           </extend>
         </extendedCases>
@@ -508,9 +505,2010 @@
     <packageHasNamedElement>
       <useCase
         Id="938fbd0c-9b21-43a7-adfe-88d70f073051"
-        name="Редактирование дерева категорий"
+        name="Редактирование профиля пользователя"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3ec0f19b-898b-4b3a-b134-3277c6366724"
+        name="Пользователь системы"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="58972933-50c3-4635-a92f-873fd5d5d181"
+            isDerived="false"
+            sourceEndRoleName="Пользователь системы"
+            targetEndRoleName="Настройка категорий контрагента"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e994e0b6-8b51-4ee4-baa9-9de651c9ead9"
+              LastKnownName="Настройка категорий контрагента"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="26ad535e-3ba2-4e43-9950-94018bb288a5"
+                  name="Пользователь системы"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="04f6bf70-4da2-40e8-ba73-bbd33543f228"
+                  name="Настройка категорий контрагента"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="cc2be540-3465-4147-b373-470d01b4d3a0"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fab4b671-594e-4c1d-b1ac-3b1c95c5e2c1"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c0e80944-e976-4a28-8cee-072a213f9932"
+            isDerived="false"
+            sourceEndRoleName="Пользователь системы"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea84916a-9e72-485a-ac71-fd9712e5a315"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ae00cfd-dc67-4c4f-9499-17d78ba7907a"
+                  name="Пользователь системы"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b2fea494-b3a5-43d8-b5b6-cf4b8e16fb40"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d2c2fb9e-51b6-40d8-9614-e14e189857bc"
+            isDerived="false"
+            sourceEndRoleName="Пользователь системы"
+            targetEndRoleName="Правило классификации"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a41ab675-681d-4ae9-b19c-06e0ff056335"
+              LastKnownName="Правило классификации"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5a015038-bbb3-4865-b5df-6d6cba6055d6"
+                  name="Пользователь системы"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="06f12104-e36a-43a9-91cb-c4c9c0a7f6a7"
+                  name="Правило классификации"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d500ad8b-dae1-4011-b5bd-1da9e32571f1"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="0c90d55c-a46f-4a9f-8752-69cbd4c3493f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="560ffe3e-998f-470a-9b38-f9f86235a906"
+            name="Фамилия"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="95d57c3f-2e5f-4907-94e4-1cd2b4c39a9b"
+            name="Имя"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="b2f09085-f7f1-4be4-a646-cd3b2b0436c6"
+            name="Заработная плата"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="61106400-aad1-4d27-84aa-953b7e822466"
+            name="Терм &quot;Маленькая сумма"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="29b2ece6-36c6-48fd-b817-17d118e2e67d"
+            name="Терм &quot;Средняя сумма&quot;"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c47ff68f-5703-4395-8eb0-e62fddc44115"
+            name="Терм &quot;Небольшая сумма&quot;"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="41033188-4d36-4347-807e-84a84a3f44b5"
+            name="Терм &quot;Большая сумма&quot;"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cccdb131-da6c-4e6f-bc22-79daa939a763"
+        name="Контрагент"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="5acbe1f0-f5c0-446c-93a7-ee7573577edf"
+            name="Имя"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6958faff-153c-4fcd-8fc5-7431f91cc267"
+        name="Категория контрагента"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="8197b760-2b40-4971-8678-16532d91e341"
+            name="Имя"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e994e0b6-8b51-4ee4-baa9-9de651c9ead9"
+        name="Настройка категорий контрагента"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="8cb0a002-db82-4f30-9b92-db915e00f533"
+            isDerived="false"
+            sourceEndRoleName="Настройка категорий контрагента"
+            targetEndRoleName="Контрагент"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cccdb131-da6c-4e6f-bc22-79daa939a763"
+              LastKnownName="Контрагент"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d937b911-4063-45b0-8d72-3df49da8efe6"
+                  name="Настройка категорий контрагента"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a10dcddb-0eb7-42f0-961e-4fa2fe8170d5"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="91ebe8d6-259c-490b-86d6-03c02876a290"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0f77dd29-0d8f-4719-b9fa-fd32edfc8495"
+                  name="Контрагент"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="257c8395-8582-4c4c-bc46-01a8d5256228"
+            isDerived="false"
+            sourceEndRoleName="Настройка категорий контрагента"
+            targetEndRoleName="Категория контрагента"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6958faff-153c-4fcd-8fc5-7431f91cc267"
+              LastKnownName="Категория контрагента"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7dece28d-83a3-4af8-8c92-89fb4c423d56"
+                  name="Настройка категорий контрагента"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="efe4b4b7-bfe8-4c9b-9b84-2ccfd29b7b10"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5501b43f-fd9b-45f0-a202-0c2e0d9156e4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c67f2724-af8f-4d32-a55a-ceaa42048b74"
+                  name="Категория контрагента"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="e0665260-6820-426b-bdd8-148dc295524e"
+            name="Вес"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ea84916a-9e72-485a-ac71-fd9712e5a315"
+        name="Категория"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="89f513b5-ff6c-4bc9-ac51-a5510dca49e5"
+            isDerived="false"
+            sourceEndRoleName="Категория"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea84916a-9e72-485a-ac71-fd9712e5a315"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ce1ed16c-9821-4046-b350-fea9cce7d6a9"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0512b0ea-87fe-4ea8-b2a8-add7b6df5c37"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="846b382b-a0de-4dbf-ac49-8b045f9cd5c5"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="dc40990c-2ca2-40d9-907d-6b3e47fbca02"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="9cfa6462-e958-4776-be8c-5fe3305d7910"
+            name="Имя"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="777c74cf-e065-4464-abee-c93cf30f1644"
+        name="Платеж"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="cfa2e7a0-d520-4545-9437-97909a80c010"
+            isDerived="false"
+            sourceEndRoleName="Платеж"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea84916a-9e72-485a-ac71-fd9712e5a315"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cae8c717-5c22-478c-a193-eb99df6cd85d"
+                  name="Платеж"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1295e90d-e751-4ebb-826d-e3275fec0a02"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="228614c1-8326-406f-bbea-9522759837c8"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="879c9896-4e43-4ba8-8c9d-36d977bc55a6"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="04273d7f-28ec-4776-b5db-18fa552377e1"
+            isDerived="false"
+            sourceEndRoleName="Платеж"
+            targetEndRoleName="Контрагент"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="cccdb131-da6c-4e6f-bc22-79daa939a763"
+              LastKnownName="Контрагент"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="21889e4f-fea6-4ae3-a606-607964b34981"
+                  name="Платеж"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="8e7aeda8-e51c-435d-9d8d-3c92c1ca5b90"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7f15a4a6-6712-4ea6-9b0f-c4a71861de78"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a5cc3aa6-5bb3-4a2b-a955-b8ffb0d452f2"
+                  name="Контрагент"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="12ca94ba-44de-4ee3-9c0a-db08c0125374"
+            name="Сумма"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2787cacd-8091-4c9e-bdfc-541009c4a1c1"
+            name="Дата"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="3fba1ac0-333f-47e9-b432-c6aea9dca298"
+            name="Назначение"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a41ab675-681d-4ae9-b19c-06e0ff056335"
+        name="Правило классификации"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="f22b5a6c-59ba-40bc-b43b-7afd89dd0cec"
+            isDerived="false"
+            sourceEndRoleName="Правило классификации"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea84916a-9e72-485a-ac71-fd9712e5a315"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4c494268-bca7-4644-b110-8f72b655869a"
+                  name="Правило классификации"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="dde86c18-bdf7-42b2-90ac-07326a7b0f93"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="16045c43-5dff-488e-899a-f27420e8d1d9"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="890542fc-ab42-44ab-9f1d-0955f692db55"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="88f4dadf-2290-46e7-a5cc-4986c1bb639c"
+            name="Посылка"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="c67e08d5-e773-4ab2-b3ec-ebd42d2b04d7"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="93075c61-34e0-4b33-8f77-d82b896c0853"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="03414afe-02a9-4c21-897b-780e9567b9bc"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="6f343374-b244-4889-a5c8-9947a0b7e693"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode
+            Id="109f068b-677d-4282-8607-c7630182acda"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <forkNode
+            Id="6f343374-b244-4889-a5c8-9947a0b7e693"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="77604f32-d1bc-424a-bcdd-bdd2dd41332a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="937c0152-3fd5-4e43-b10f-da68cba0baa0"
+                  LastKnownName="Вычисление  термов переменной &quot;Сумма платежа&quot;"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="98e95349-f20b-4e86-b3ad-7cdc841130a0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="463c725f-0bff-47a7-a6cd-1b291518a696"
+                  LastKnownName="Вычисление термов переменной &quot;Дата платежа&quot;"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="74628dbb-b26f-405a-9e0f-1ea70ab02363"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9ecc584b-f95c-4fc7-bd8a-35c9ed504458"
+                  LastKnownName="Вычисление термов переменной &quot;Контрагент&quot;"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <joinNode
+            Id="0a6491cb-bfd8-498f-9418-fc4361f465a6"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b3b62c61-0f04-4fa7-8bfe-5c9c92a0887d"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="c3432dba-8ea5-464d-8ab5-2cdfdda82b76"
+                  LastKnownName="Fork2"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction
+            Id="937c0152-3fd5-4e43-b10f-da68cba0baa0"
+            name="Вычисление  термов переменной &quot;Сумма платежа&quot;"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a7ea9b56-05ee-4e62-a78a-e26c11db1777"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="0a6491cb-bfd8-498f-9418-fc4361f465a6"
+                  LastKnownName="Join1"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="463c725f-0bff-47a7-a6cd-1b291518a696"
+            name="Вычисление термов переменной &quot;Дата платежа&quot;"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="42b26b76-1033-459e-b14c-1f61d5c691cd"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="0a6491cb-bfd8-498f-9418-fc4361f465a6"
+                  LastKnownName="Join1"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9ecc584b-f95c-4fc7-bd8a-35c9ed504458"
+            name="Вычисление термов переменной &quot;Контрагент&quot;"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fc85b818-37f2-468d-aff3-69e20886edfa"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="0a6491cb-bfd8-498f-9418-fc4361f465a6"
+                  LastKnownName="Join1"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="783f5026-5c27-4c72-a9ad-9ebe75fe421b"
+            name="Вычисление истинности предпосылок каждого правила"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7e734fb9-35ff-4754-aeb9-0d29897c0b6a"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="cdbbb423-5da4-4741-9355-2e7b0e4811fe"
+                  LastKnownName="Join2"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="c3432dba-8ea5-464d-8ab5-2cdfdda82b76"
+            name="Fork2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a478674b-d3b9-452e-bc4c-9be704b64474"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="783f5026-5c27-4c72-a9ad-9ebe75fe421b"
+                  LastKnownName="Вычисление истинности предпосылок каждого правила"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <joinNode
+            Id="cdbbb423-5da4-4741-9355-2e7b0e4811fe"
+            name="Join2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a6fd10fc-0192-4878-80e7-a90666113aff"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="178c2a71-6faf-4e52-ae58-403ae2121438"
+                  LastKnownName="Активизация и аккумулирование"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction
+            Id="178c2a71-6faf-4e52-ae58-403ae2121438"
+            name="Активизация и аккумулирование"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b9402491-f1ae-475e-8fcd-8026d8ba72e6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9a8d490e-bed0-40d9-a357-044c1eee2440"
+                  LastKnownName="Дефаззификация"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9a8d490e-bed0-40d9-a357-044c1eee2440"
+            name="Дефаззификация"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f6f3f349-4a5c-4e93-ae6c-a2f400ed055a"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="109f068b-677d-4282-8607-c7630182acda"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d4137f58-95fb-4320-8327-b0fcc7da7df6"
+        name="Пользователь системы"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="90749157-e64d-4f52-84d1-4b173493d02e"
+            isDerived="false"
+            sourceEndRoleName="Пользователь системы"
+            targetEndRoleName="Настройка категорий контрагента"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="2096c9df-5ff9-477d-ab27-aed90715a2e3"
+              LastKnownName="Настройка категорий контрагента1"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c5ea5075-5b64-4b95-a2e4-196c0c60a578"
+                  name="Пользователь системы"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="eb8a7ddd-0afa-45f0-b99d-bb34e50bd41a"
+                  name="Настройка категорий контрагента"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="831fac94-6449-4c34-89c6-24a576b18e3d"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="60a702e5-a3cd-4b41-b190-27d122466ddc"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6ab0bc5a-f07c-4338-9ef3-79031307344d"
+            isDerived="false"
+            sourceEndRoleName="Пользователь системы"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a8818035-6578-41a8-bb01-4f0934470e6c"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="943b3423-532e-479e-a304-b492cf4f6d1c"
+                  name="Пользователь системы"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b848f3ec-c7f3-4cd6-9480-f22f46aa9a4a"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="52162e16-37b9-4787-851a-95fc4c4d4035"
+            isDerived="false"
+            sourceEndRoleName="Пользователь системы"
+            targetEndRoleName="Правило классификации"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6277d46a-0223-433e-bad4-cdf8fe2ff0ca"
+              LastKnownName="Правило классификации"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d8a1f06b-c121-43e8-beb8-af9d307a4bcc"
+                  name="Пользователь системы"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="784bda2e-f9eb-42d8-ac4c-ca009b4ad0f9"
+                  name="Правило классификации"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="92922715-f84b-4a86-ab6d-93cb99814a99"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fe44ee60-05b5-4cdd-be40-8f50c53692a4"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="144b76e0-8536-483d-a26f-3a7d2c515b61"
+            isDerived="false"
+            sourceEndRoleName="Пользователь системы"
+            targetEndRoleName="План"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="865f3293-cbb0-41db-866c-012c5ddfade9"
+              LastKnownName="План"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="08aa1fc0-5197-4303-99c8-eb5891d3d893"
+                  name="Пользователь системы"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dd68902d-b9a5-430a-b30f-f8cd38c7a5f9"
+                  name="План"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="8662f4c5-3fb2-4dc6-8164-fa8393c04943"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="59ac24bc-a70b-44a4-9fad-8a7bc5f9c923"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="7b6d6e8b-ba83-4bfc-8d16-124ba8061f73"
+            name="Фамилия"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="29fbdff7-fe9a-4dd6-ac6a-ee4a01c4f0a6"
+            name="Имя"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="90dc833b-dc61-4e33-993c-0bfd8791dca0"
+            name="Заработная плата"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5b59972e-db87-4540-bef4-385d199076bc"
+            name="Терм &quot;Маленькая сумма"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4555d76f-2c6a-4b32-920f-773c7d1fab72"
+            name="Терм &quot;Средняя сумма&quot;"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="16f29bd8-3a74-4a98-9d82-c4dd38f4ba05"
+            name="Терм &quot;Небольшая сумма&quot;"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="221d74de-6b16-4d56-87e4-ad561ebfdd95"
+            name="Терм &quot;Большая сумма&quot;"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="50d42d7a-daeb-467f-88a0-b64914b3ee9d"
+        name="Контрагент1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="75f5157f-9138-4c06-8607-60911b6eaca9"
+            name="Имя"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d7b3db90-152b-49e1-b97a-c8cfc58cbb2c"
+        name="Категория контрагента1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="d23198ba-919d-49f9-af5d-54967469a063"
+            name="Имя"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2096c9df-5ff9-477d-ab27-aed90715a2e3"
+        name="Настройка категорий контрагента1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="b5c3b0f1-c05d-483c-9e5e-d2c06198b86c"
+            isDerived="false"
+            sourceEndRoleName="Настройка категорий контрагента"
+            targetEndRoleName="Контрагент"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="50d42d7a-daeb-467f-88a0-b64914b3ee9d"
+              LastKnownName="Контрагент1"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="899a2223-5167-484c-825b-ca3faba9fd88"
+                  name="Настройка категорий контрагента"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b646f9a6-6f60-458f-a328-cab76cb1acf3"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a1b3ebeb-49d9-42d2-a1bd-fc2e8d5702e0"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="973f7b40-a0b6-49b2-9747-8e18c3170a09"
+                  name="Контрагент"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="845ecc5a-f695-4df1-b8a7-1b2c22357499"
+            isDerived="false"
+            sourceEndRoleName="Настройка категорий контрагента"
+            targetEndRoleName="Категория контрагента"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="d7b3db90-152b-49e1-b97a-c8cfc58cbb2c"
+              LastKnownName="Категория контрагента1"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1934e5cb-ddb0-4ffd-8f3a-6f1b102b4913"
+                  name="Настройка категорий контрагента"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="96909328-3340-47cd-8d3b-fb0ebee97d4d"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="bde48041-9581-4af0-b041-3ddb029a594f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1d95ffb8-0548-40e9-9e69-b19730001c65"
+                  name="Категория контрагента"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="83c07b6e-00b5-4151-8ac1-5f77a55c6b5e"
+            name="Вес"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a8818035-6578-41a8-bb01-4f0934470e6c"
+        name="Категория"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="094f4285-4afe-449f-9926-34e5bf09dbd7"
+            isDerived="false"
+            sourceEndRoleName="Категория"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a8818035-6578-41a8-bb01-4f0934470e6c"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aecc9e92-8e2e-4df4-8f3e-31a75de310c5"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="35344af1-dce2-4998-a7e6-d1eca74277bc"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="8bb48755-a19c-478a-9886-81531d175349"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9078326a-1583-428a-9b24-2ab302813b16"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="d829c3b6-9192-4744-868c-2be0b4a74139"
+            name="Имя"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="00ee4262-45c2-495c-bf5d-d2c29b304eeb"
+        name="Платеж"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="08c7e014-5de9-4709-aaeb-41eabcc5aa99"
+            isDerived="false"
+            sourceEndRoleName="Платеж"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a8818035-6578-41a8-bb01-4f0934470e6c"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bdd330e5-499d-49ae-b8f0-6730bf132c88"
+                  name="Платеж"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="fe24c124-e1b7-4ead-9109-e8d57e48557c"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="58b758c4-8513-47e4-a7ae-0ecedef7cbda"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="28ee2074-605c-4865-be91-8980b496f0a4"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="dd08c783-04b7-4eed-80f3-58e3a3de7204"
+            isDerived="false"
+            sourceEndRoleName="Платеж"
+            targetEndRoleName="Контрагент"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="50d42d7a-daeb-467f-88a0-b64914b3ee9d"
+              LastKnownName="Контрагент1"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ffa06ccd-ef64-47cc-9093-a1a69e8321a7"
+                  name="Платеж"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="083374c8-3e25-4684-826a-e8a66e20c360"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="fb9d7023-31d7-4ea0-a7b8-ee42e3f51f97"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d8b5a354-b15e-43ab-b1da-2ef57751dd66"
+                  name="Контрагент"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="efa5a54e-8294-47c1-b630-3adb51930475"
+            name="Сумма"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="48562700-3074-41bd-98b4-88ee4197ce98"
+            name="Дата"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="b3e6b319-e743-4edb-844a-9caf3f00d0ac"
+            name="Назначение"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6277d46a-0223-433e-bad4-cdf8fe2ff0ca"
+        name="Правило классификации"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="615882bb-e7cb-4bb6-b446-018d98c5704e"
+            isDerived="false"
+            sourceEndRoleName="Правило классификации"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a8818035-6578-41a8-bb01-4f0934470e6c"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fa3a6f97-a47d-45fa-a608-0a2bbfdf7e1d"
+                  name="Правило классификации"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="38d9593a-b549-4d0a-b72e-ae13cb58c529"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1e3cd442-e20c-46c2-9a89-1e7b3b2a77f2"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1c5fc734-24b2-406c-bd89-58a4ea33dcfc"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="8ddd09b2-a616-45f1-b686-14dcbc96fa6f"
+            name="Посылка"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="865f3293-cbb0-41db-866c-012c5ddfade9"
+        name="План"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="42bbac7e-0508-4027-be17-f2851f36a75e"
+            isDerived="false"
+            sourceEndRoleName="План"
+            targetEndRoleName="Элемент плана"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7c56074a-5e0a-4d9d-8e37-cc04fd3b72b2"
+              LastKnownName="Элемент плана"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3fee140c-05be-449a-aef8-03aab21f8cfc"
+                  name="План"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="451c7b4d-c4fb-4be0-8fc0-8bdce21a3c36"
+                  name="Элемент плана"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3744ab8f-242a-4f44-80ca-e87985f5e84f"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d8af6e62-64f1-4f74-98b8-b0baed9fe9ef"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="2faecc69-a554-4207-8dbf-bed12260b3e0"
+            name="Год"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c346e39d-1a1e-4dfa-a65c-063afb034314"
+            name="Название"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="67d95edd-0aad-4fc5-934b-507b5a284508"
+            name="Дата изменения"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7c56074a-5e0a-4d9d-8e37-cc04fd3b72b2"
+        name="Элемент плана"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="381998f9-4245-4dcd-aef0-bb22b5c1d32f"
+            isDerived="false"
+            sourceEndRoleName="Элемент плана"
+            targetEndRoleName="Категория"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a8818035-6578-41a8-bb01-4f0934470e6c"
+              LastKnownName="Категория"
+              LastKnownLocation="HFi.Modelling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a1422c20-d5b3-4966-a066-c98c8e185e7c"
+                  name="Элемент плана"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="aed42d45-64ab-4f29-9a1f-cf2461b6744e"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="0252cddb-5dd7-453c-9d76-7c6f9c3c33f5"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2ff7389d-ed0c-48ba-9b42-77eaee4fce5c"
+                  name="Категория"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="88b63382-6380-4b59-93bd-d36e9c920190"
+            name="Дата"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="3582476f-c99c-4477-859b-10d7ae6d8e97"
+            name="Сумма"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="ea59c8a3-ec8f-4eb4-8b24-0d501b04b9bc"
+        name="Activity2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="f3fcc298-21e9-4e8b-9046-2f4832bb8769"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8beee49c-bb8d-4f56-9fff-6502a71bef13"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="07713705-e1a7-4faf-a29c-3d526cbc45b0"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode
+            Id="67fbde47-a5d4-4f7b-88bb-e50b84dbbc98"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <forkNode
+            Id="07713705-e1a7-4faf-a29c-3d526cbc45b0"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3f975717-d16f-49de-b428-3e7bb7544b67"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c4435c96-f341-4b4c-9396-60f1398f8f90"
+                  LastKnownName="Определение тренда изменения годовых расходов "
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="84c738e1-68a5-4bfa-a4ca-9850689b2726"
+            name="Выявление годового паттерна"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="046c3429-b39a-4293-b58e-92a6fb09565f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="386ac62b-9ce8-4487-939b-9b4ff77d29ad"
+                  LastKnownName="Выявление недельного паттерна расходов"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c4435c96-f341-4b4c-9396-60f1398f8f90"
+            name="Определение тренда изменения годовых расходов "
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2876766e-0e82-4fe5-862e-243841e9a15f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="84c738e1-68a5-4bfa-a4ca-9850689b2726"
+                  LastKnownName="Выявление годового паттерна"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="386ac62b-9ce8-4487-939b-9b4ff77d29ad"
+            name="Выявление недельного паттерна расходов"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="88095363-6883-42d4-b08f-1162aa11c2e2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d72bf32f-db24-41e5-809c-1e673b9d93ae"
+                  LastKnownName="Вычисление строки приведенной матрицы"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="0d0a2b41-6864-4af8-8e54-8b2f1aa8a400"
+            name="Join2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="163f2d9e-b81d-43c2-afcf-e633128bd03d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9611d01a-b8c3-4006-861e-99cde61b6151"
+                  LastKnownName="Вычисление матрицы бюджетирования"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <activityParameterNode
+            Id="4b6d02c7-4f49-4e94-a83b-d8f2e43704c6"
+            name="для каждой статьи расходов"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="a5be4378-5e12-4dfc-bc5f-cc3ad5f08277"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </activityParameterNode>
+          <opaqueAction
+            Id="d72bf32f-db24-41e5-809c-1e673b9d93ae"
+            name="Вычисление строки приведенной матрицы"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="db9213b4-b22b-430f-85b3-8aa53916bd76"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="0d0a2b41-6864-4af8-8e54-8b2f1aa8a400"
+                  LastKnownName="Join2"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9611d01a-b8c3-4006-861e-99cde61b6151"
+            name="Вычисление матрицы бюджетирования"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0bb4378f-da5d-41ac-86cf-65df21d400f2"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="67fbde47-a5d4-4f7b-88bb-e50b84dbbc98"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="HFi.Modelling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

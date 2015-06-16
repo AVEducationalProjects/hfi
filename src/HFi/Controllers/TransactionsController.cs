@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -28,6 +29,43 @@ namespace HFi.Controllers
             return View(user.Transactions.OrderByDescending(x=>x.Date));
         }
 
+        public ActionResult UploadFile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult LoadFile()
+        {
+            var user = userManager.FindById(User.Identity.GetUserId());
+
+            var stream = new StreamReader(Request.Files["uploadedFile"].InputStream);
+
+            var ruleBuilder = new RuleBuilder(db, user);
+            user.Rules.ForEach(x => x.BuildPropositionExpression(ruleBuilder));
+            
+
+            while (!stream.EndOfStream)
+            {
+                var data = stream.ReadLine().Replace("\"","").Split(',');
+                var t = new Transaction()
+                {
+                    Date = DateTime.ParseExact(data[0], "dd.MM.yyyy", null),
+                    Source = data[1].Trim(),
+                    Amount = Decimal.Parse(data[2].Trim())
+                };
+
+                var results = user.Rules.Select(x => new { Value = x.PropositionExpression.Calculate(t), Category = x.Conclusion });
+                if (results.Max(y => y.Value) >= 0.1)
+                t.Category = results.First(x => x.Value == results.Max(y => y.Value)).Category;
+
+                user.Transactions.Add(t);
+            }
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         // GET: Transactions/Create
         public async Task<ActionResult> Create()

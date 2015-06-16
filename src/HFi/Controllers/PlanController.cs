@@ -38,6 +38,7 @@ namespace HFi.Controllers
         {
             var user = await userManager.FindByIdAsync(User.Identity.GetUserId());
             var plan = user.Plans.Single(x => x.Id == id);
+            ViewBag.Salary = user.Salary;
 
             SetupPlanEntrySubEntries(plan, user.RootCategory);
 
@@ -79,6 +80,7 @@ namespace HFi.Controllers
 
             SetupPlanEntrySubEntries(plan, user.RootCategory);
 
+            ViewBag.Salary = user.Salary;
             var yearTable = new YearTableViewModel(user.RootCategory, plan.Entries.ToList());
 
             return PartialView("_YearTable", yearTable);

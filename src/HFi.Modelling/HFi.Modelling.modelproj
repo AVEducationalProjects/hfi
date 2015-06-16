@@ -22,6 +22,41 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="Copy of UseCaseDiagram.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Copy of UseCaseDiagram.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Copy of UseCaseDiagram.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UMLActivityDiagram1.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLActivityDiagram1.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLActivityDiagram1.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="UMLActivityDiagram2.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLActivityDiagram2.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLActivityDiagram2.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="UMLClassDiagram1.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLClassDiagram1.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLClassDiagram1.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UMLClassDiagram2.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLClassDiagram2.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLClassDiagram2.classdiagram</DependentUpon>
+    </Content>
     <Content Include="UMLComponentDiagram1.componentdiagram">
       <SubType>Content</SubType>
     </Content>

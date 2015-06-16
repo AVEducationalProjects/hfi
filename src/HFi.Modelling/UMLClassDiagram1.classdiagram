@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="f17b49de-1ca0-4924-97dc-ab97b0f4f1c4" name="UMLClassDiagram1" linkedPackageId="e579fd33-4097-4ead-892d-bac9f501c42e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="94f517d6-b11b-4bd5-89d7-0824502cca4e">
+      <profileInstance Id="b9d9054a-fa36-4b41-9dda-76cc787401aa" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fa6a5684-9761-4a03-929e-0e9820651716">
+      <profileInstance Id="5973c057-ec00-40b5-8553-52fd8458c11a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9c96f41e-1e0b-4f33-8faf-bae897b42978" name="Пользователь системы" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3ec0f19b-898b-4b3a-b134-3277c6366724" />
+        <targetEnds>
+          <association Id="0037d004-809a-4721-a21b-2a9b032bd57b" isDerived="false" sourceEndRoleName="Пользователь системы" targetEndRoleName="Настройка категорий контрагента" isLeaf="false" isAbstract="false">
+            <classMoniker Id="43f32068-61b9-4eb5-892a-051cda6a6a6c" LastKnownName="Настройка категорий контрагента" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4069b3e7-af7f-411d-91f4-31adb862f202" name="Пользователь системы" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="26ad535e-3ba2-4e43-9950-94018bb288a5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5f6429d3-6d9d-4365-a176-8ec2bccde763" name="Настройка категорий контрагента" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="3dde8c5a-3e96-4b34-8f9e-e09336b46d08" name="Lower" value="*">
+                      <elementDefinition Id="cc2be540-3465-4147-b373-470d01b4d3a0" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="e70795f6-eaac-4409-85ac-e51d5d7f8baf" name="Upper" value="*">
+                      <elementDefinition Id="fab4b671-594e-4c1d-b1ac-3b1c95c5e2c1" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="04f6bf70-4da2-40e8-ba73-bbd33543f228" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="58972933-50c3-4635-a92f-873fd5d5d181" />
+          </association>
+          <association Id="081b0ba3-fa3d-4d06-98eb-31a2bfab5790" isDerived="false" sourceEndRoleName="Пользователь системы" targetEndRoleName="Категория" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bdc4aaca-8d44-4d03-9a26-f3b718a9545e" LastKnownName="Категория" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="12182d37-e872-4f4a-8c44-86c6e2125bb2" name="Пользователь системы" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3ae00cfd-dc67-4c4f-9499-17d78ba7907a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="386ca0e3-9964-41f7-9c6f-55c13938bf4d" name="Категория" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b2fea494-b3a5-43d8-b5b6-cf4b8e16fb40" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c0e80944-e976-4a28-8cee-072a213f9932" />
+          </association>
+          <association Id="eb8b03eb-11a3-4c63-9f21-369cab0c4e32" isDerived="false" sourceEndRoleName="Пользователь системы" targetEndRoleName="Правило классификации" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8084c05d-e3b5-4f8d-a65d-db205d92bf77" LastKnownName="Правило классификации" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ef640be1-fa57-46ab-bf2e-229c24bd0c63" name="Пользователь системы" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5a015038-bbb3-4865-b5df-6d6cba6055d6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3d56762-5fe9-4ec1-8074-0cfe28dc1c83" name="Правило классификации" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="082fb5a5-4abe-4b17-947b-758fefbca67e" name="Lower" value="*">
+                      <elementDefinition Id="d500ad8b-dae1-4011-b5bd-1da9e32571f1" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="11d11f88-5196-458f-a3a6-6cdb281e39e0" name="Upper" value="*">
+                      <elementDefinition Id="0c90d55c-a46f-4a9f-8752-69cbd4c3493f" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="06f12104-e36a-43a9-91cb-c4c9c0a7f6a7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d2c2fb9e-51b6-40d8-9614-e14e189857bc" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="1993fcbb-f450-4bb9-9c6f-aeec16039ee6" name="Фамилия" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="560ffe3e-998f-470a-9b38-f9f86235a906" />
+          </property>
+          <property Id="33bc586c-3f94-4335-82f7-90494448a57a" name="Имя" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="95d57c3f-2e5f-4907-94e4-1cd2b4c39a9b" />
+          </property>
+          <property Id="c118da09-fc3e-4bf9-9f38-1f61d6ab33db" name="Заработная плата" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b2f09085-f7f1-4be4-a646-cd3b2b0436c6" />
+          </property>
+          <property Id="669c3148-eb2c-47f2-b581-5e75d05cfa6c" name="Терм &quot;Маленькая сумма" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="61106400-aad1-4d27-84aa-953b7e822466" />
+          </property>
+          <property Id="6f5a3f93-73e2-4ee3-a7d5-590c83ca9306" name="Терм &quot;Средняя сумма&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="29b2ece6-36c6-48fd-b817-17d118e2e67d" />
+          </property>
+          <property Id="653db76a-1c59-4c3d-9a92-7861d4453541" name="Терм &quot;Небольшая сумма&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c47ff68f-5703-4395-8eb0-e62fddc44115" />
+          </property>
+          <property Id="5a1728c2-09d1-445b-89df-cd0a9514c419" name="Терм &quot;Большая сумма&quot;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="41033188-4d36-4347-807e-84a84a3f44b5" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b28e8297-fb83-4da7-a93a-9fd08070c411" name="Контрагент" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cccdb131-da6c-4e6f-bc22-79daa939a763" />
+        <ownedAttributesInternal>
+          <property Id="6332bc13-230c-44aa-86de-a6a278db5416" name="Имя" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5acbe1f0-f5c0-446c-93a7-ee7573577edf" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ac8b3fea-33a0-4de9-a675-78ebbe208090" name="Категория контрагента" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6958faff-153c-4fcd-8fc5-7431f91cc267" />
+        <ownedAttributesInternal>
+          <property Id="d0f0f783-11a9-4c77-b3e0-e534fb9a3e35" name="Имя" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8197b760-2b40-4971-8678-16532d91e341" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="43f32068-61b9-4eb5-892a-051cda6a6a6c" name="Настройка категорий контрагента" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e994e0b6-8b51-4ee4-baa9-9de651c9ead9" />
+        <targetEnds>
+          <association Id="13d531e6-67ea-49dd-971d-ddc45f614bef" isDerived="false" sourceEndRoleName="Настройка категорий контрагента" targetEndRoleName="Контрагент" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b28e8297-fb83-4da7-a93a-9fd08070c411" LastKnownName="Контрагент" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="513b97a5-1c9a-4c69-b284-3d50cb25e3e1" name="Настройка категорий контрагента" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="a74343d8-dedd-4f00-becd-2c830efdabb5" name="Lower" value="*">
+                      <elementDefinition Id="a10dcddb-0eb7-42f0-961e-4fa2fe8170d5" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="0b5bdfa1-e4df-464b-9afb-2a9726fb9ce8" name="Upper" value="*">
+                      <elementDefinition Id="91ebe8d6-259c-490b-86d6-03c02876a290" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="d937b911-4063-45b0-8d72-3df49da8efe6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7f52c847-9e41-4954-828a-3da0969cb4e1" name="Контрагент" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0f77dd29-0d8f-4719-b9fa-fd32edfc8495" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8cb0a002-db82-4f30-9b92-db915e00f533" />
+          </association>
+          <association Id="508cd65c-2f89-422a-8e68-4f9674a61070" isDerived="false" sourceEndRoleName="Настройка категорий контрагента" targetEndRoleName="Категория контрагента" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ac8b3fea-33a0-4de9-a675-78ebbe208090" LastKnownName="Категория контрагента" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="22308e12-b5d4-4a75-8419-7f6eeb0470e7" name="Настройка категорий контрагента" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="e5a224fb-bb60-42db-b177-3b2133e15fc8" name="Lower" value="*">
+                      <elementDefinition Id="efe4b4b7-bfe8-4c9b-9b84-2ccfd29b7b10" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="0e4ae656-2a1e-4e67-81c4-d7829fafc4a4" name="Upper" value="*">
+                      <elementDefinition Id="5501b43f-fd9b-45f0-a202-0c2e0d9156e4" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="7dece28d-83a3-4af8-8c92-89fb4c423d56" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2c642f8b-82d4-4203-9cc0-c6fcf4342314" name="Категория контрагента" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c67f2724-af8f-4d32-a55a-ceaa42048b74" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="257c8395-8582-4c4c-bc46-01a8d5256228" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="78bd569f-b684-4a49-ba95-c3fb631ef83b" name="Вес" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e0665260-6820-426b-bdd8-148dc295524e" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bdc4aaca-8d44-4d03-9a26-f3b718a9545e" name="Категория" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ea84916a-9e72-485a-ac71-fd9712e5a315" />
+        <targetEnds>
+          <association Id="dc17173a-54b7-47a9-87a2-3cbfa4e171e0" isDerived="false" sourceEndRoleName="Категория" targetEndRoleName="Категория" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bdc4aaca-8d44-4d03-9a26-f3b718a9545e" LastKnownName="Категория" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c72865f5-e76b-428d-8e96-8652eaa3601a" name="Категория" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ce1ed16c-9821-4046-b350-fea9cce7d6a9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8a212e53-1ebc-4cec-bb1f-9b020066068b" name="Категория" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="bec36571-0e12-46fe-9120-72df0032107b" name="Lower" value="*">
+                      <elementDefinition Id="846b382b-a0de-4dbf-ac49-8b045f9cd5c5" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="b702c0c1-a0c9-43b4-90a4-1b1829817a0c" name="Upper" value="*">
+                      <elementDefinition Id="dc40990c-2ca2-40d9-907d-6b3e47fbca02" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="0512b0ea-87fe-4ea8-b2a8-add7b6df5c37" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="89f513b5-ff6c-4bc9-ac51-a5510dca49e5" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="9327d332-67ec-4fb8-ae81-7bfce2f7fc68" name="Имя" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9cfa6462-e958-4776-be8c-5fe3305d7910" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3975ad72-cd8b-45bb-a400-5a1ecc66e4f4" name="Платеж" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="777c74cf-e065-4464-abee-c93cf30f1644" />
+        <targetEnds>
+          <association Id="c635eb42-dd08-4df2-a8f5-1408b60e074f" isDerived="false" sourceEndRoleName="Платеж" targetEndRoleName="Категория" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bdc4aaca-8d44-4d03-9a26-f3b718a9545e" LastKnownName="Категория" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7365c6f9-36ef-4a38-85f2-77d7a49d7a38" name="Платеж" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="9eb63109-8534-421c-b9de-ce189fd47f69" name="Lower" value="*">
+                      <elementDefinition Id="1295e90d-e751-4ebb-826d-e3275fec0a02" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="4e2235e3-6378-4794-86e3-c8edd0d340cf" name="Upper" value="*">
+                      <elementDefinition Id="228614c1-8326-406f-bbea-9522759837c8" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="cae8c717-5c22-478c-a193-eb99df6cd85d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3c2e9b35-c66d-4fb7-98f3-2ac661438706" name="Категория" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="879c9896-4e43-4ba8-8c9d-36d977bc55a6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cfa2e7a0-d520-4545-9437-97909a80c010" />
+          </association>
+          <association Id="b81f3667-ba00-4327-8822-18373a12ce1a" isDerived="false" sourceEndRoleName="Платеж" targetEndRoleName="Контрагент" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b28e8297-fb83-4da7-a93a-9fd08070c411" LastKnownName="Контрагент" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c863bef4-bc73-4d1a-a38d-62b671c20fea" name="Платеж" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="e3adda51-19a9-4811-a293-f3dd45dee062" name="Lower" value="*">
+                      <elementDefinition Id="8e7aeda8-e51c-435d-9d8d-3c92c1ca5b90" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="9b5ec2e2-8f29-441b-a12a-f9fec0395ba7" name="Upper" value="*">
+                      <elementDefinition Id="7f15a4a6-6712-4ea6-9b0f-c4a71861de78" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="21889e4f-fea6-4ae3-a606-607964b34981" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f12c7468-29bd-46cb-927a-3f74b9d02a89" name="Контрагент" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a5cc3aa6-5bb3-4a2b-a955-b8ffb0d452f2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="04273d7f-28ec-4776-b5db-18fa552377e1" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="bd0af5cc-a7ec-4a66-a1d5-9bc9fcbc4333" name="Сумма" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="12ca94ba-44de-4ee3-9c0a-db08c0125374" />
+          </property>
+          <property Id="77d1d815-da80-4418-9e5f-4a18b2100420" name="Дата" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2787cacd-8091-4c9e-bdfc-541009c4a1c1" />
+          </property>
+          <property Id="9b7eeaf1-6caa-4752-8034-451638671168" name="Назначение" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3fba1ac0-333f-47e9-b432-c6aea9dca298" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8084c05d-e3b5-4f8d-a65d-db205d92bf77" name="Правило классификации" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a41ab675-681d-4ae9-b19c-06e0ff056335" />
+        <targetEnds>
+          <association Id="d12c6669-ff35-40d7-bf54-56d62e43c6ed" isDerived="false" sourceEndRoleName="Правило классификации" targetEndRoleName="Категория" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bdc4aaca-8d44-4d03-9a26-f3b718a9545e" LastKnownName="Категория" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="41fdb011-f9d2-406f-9560-e745dff4a0e0" name="Правило классификации" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="5fcf9e84-c7d6-4ec9-8df6-dcf49ad1282b" name="Lower" value="*">
+                      <elementDefinition Id="dde86c18-bdf7-42b2-90ac-07326a7b0f93" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="48aec031-c915-4a1c-92e4-037844f83bbb" name="Upper" value="*">
+                      <elementDefinition Id="16045c43-5dff-488e-899a-f27420e8d1d9" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="4c494268-bca7-4644-b110-8f72b655869a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b36401e3-339c-4f47-a5c4-abacb10064b7" name="Категория" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="890542fc-ab42-44ab-9f1d-0955f692db55" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f22b5a6c-59ba-40bc-b43b-7afd89dd0cec" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="497b7371-ccc9-47d2-b640-79443c69e40d" name="Посылка" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="88f4dadf-2290-46e7-a5cc-4986c1bb639c" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="e579fd33-4097-4ead-892d-bac9f501c42e" name="HFi.Modelling">
+    <elementDefinition Id="62c53e93-14d4-4f5b-8021-79cbb593d9f1" />
+  </package>
+</logicalClassDesignerModel>

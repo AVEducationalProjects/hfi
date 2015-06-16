@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="68f84c9e-ea90-47ed-a5be-2ad04de26bf0" name="Activity1" linkedPackageId="bf406e07-0552-4f40-8d33-3e187a9a8732" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="436c7eac-bb7b-498b-8a7d-3ff2f70f62f4" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="c67e08d5-e773-4ab2-b3ec-ebd42d2b04d7" />
+        <nodes>
+          <initialNode Id="14696d8b-8271-4ec6-b149-fdfadbb5e930" name="Initial1" isLeaf="false">
+            <elementDefinition Id="93075c61-34e0-4b33-8f77-d82b896c0853" />
+            <flowNodeTargets>
+              <controlFlow Id="aa7998bf-cefb-4b13-952e-b3a237755c00" isLeaf="false">
+                <forkNodeMoniker Id="b8f8583e-2878-4658-be8b-3f6fbc877e34" LastKnownName="Fork1" />
+                <elementDefinition Id="03414afe-02a9-4c21-897b-780e9567b9bc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode Id="17b1bc4d-457a-4441-9187-fa6592c396f3" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="109f068b-677d-4282-8607-c7630182acda" />
+          </activityFinalNode>
+          <forkNode Id="b8f8583e-2878-4658-be8b-3f6fbc877e34" name="Fork1" isLeaf="false">
+            <elementDefinition Id="6f343374-b244-4889-a5c8-9947a0b7e693" />
+            <flowNodeTargets>
+              <controlFlow Id="0e3a331b-2555-48ac-96a8-384668e5f4b6" isLeaf="false">
+                <opaqueActionMoniker Id="48ec369b-a58c-4274-ae1b-53878133a602" LastKnownName="Вычисление  термов переменной &quot;Сумма платежа&quot;" />
+                <elementDefinition Id="77604f32-d1bc-424a-bcdd-bdd2dd41332a" />
+              </controlFlow>
+              <controlFlow Id="c00d8ad8-f223-4b5b-a2e2-4997d2c32481" isLeaf="false">
+                <opaqueActionMoniker Id="2578dbf0-6111-45ad-b5f8-2c6e476179e2" LastKnownName="Вычисление термов переменной &quot;Дата платежа&quot;" />
+                <elementDefinition Id="98e95349-f20b-4e86-b3ad-7cdc841130a0" />
+              </controlFlow>
+              <controlFlow Id="2ab05d84-e196-486b-a596-a55470600632" isLeaf="false">
+                <opaqueActionMoniker Id="db07ec5d-116f-46ca-a95b-b52eca5516b4" LastKnownName="Вычисление термов переменной &quot;Контрагент&quot;" />
+                <elementDefinition Id="74628dbb-b26f-405a-9e0f-1ea70ab02363" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <joinNode Id="55372e0d-579a-413e-9b0d-a9d7499736ba" name="Join1" isLeaf="false">
+            <elementDefinition Id="0a6491cb-bfd8-498f-9418-fc4361f465a6" />
+            <flowNodeTargets>
+              <controlFlow Id="1758684a-8b20-4ced-8795-7716568723ca" isLeaf="false">
+                <forkNodeMoniker Id="53a6bc9c-6878-4f6e-a9da-d74dedfb2c2a" LastKnownName="Fork2" />
+                <elementDefinition Id="b3b62c61-0f04-4fa7-8bfe-5c9c92a0887d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="48ec369b-a58c-4274-ae1b-53878133a602" name="Вычисление  термов переменной &quot;Сумма платежа&quot;" isLeaf="false">
+            <elementDefinition Id="937c0152-3fd5-4e43-b10f-da68cba0baa0" />
+            <flowNodeTargets>
+              <controlFlow Id="59ba4367-233f-46a4-ad10-1f8dc3ff24d4" isLeaf="false">
+                <joinNodeMoniker Id="55372e0d-579a-413e-9b0d-a9d7499736ba" LastKnownName="Join1" />
+                <elementDefinition Id="a7ea9b56-05ee-4e62-a78a-e26c11db1777" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2578dbf0-6111-45ad-b5f8-2c6e476179e2" name="Вычисление термов переменной &quot;Дата платежа&quot;" isLeaf="false">
+            <elementDefinition Id="463c725f-0bff-47a7-a6cd-1b291518a696" />
+            <flowNodeTargets>
+              <controlFlow Id="56b9e2ee-e052-4850-8823-8fc6b012dc45" isLeaf="false">
+                <joinNodeMoniker Id="55372e0d-579a-413e-9b0d-a9d7499736ba" LastKnownName="Join1" />
+                <elementDefinition Id="42b26b76-1033-459e-b14c-1f61d5c691cd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="db07ec5d-116f-46ca-a95b-b52eca5516b4" name="Вычисление термов переменной &quot;Контрагент&quot;" isLeaf="false">
+            <elementDefinition Id="9ecc584b-f95c-4fc7-bd8a-35c9ed504458" />
+            <flowNodeTargets>
+              <controlFlow Id="ab99fc24-abcc-493d-af01-068fb98c654c" isLeaf="false">
+                <joinNodeMoniker Id="55372e0d-579a-413e-9b0d-a9d7499736ba" LastKnownName="Join1" />
+                <elementDefinition Id="fc85b818-37f2-468d-aff3-69e20886edfa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="062c66b0-c7c3-4dfd-b612-01fd2aedff16" name="Вычисление истинности предпосылок каждого правила" isLeaf="false">
+            <elementDefinition Id="783f5026-5c27-4c72-a9ad-9ebe75fe421b" />
+            <flowNodeTargets>
+              <controlFlow Id="4732c025-074f-4561-94a2-cf1dfc20aa41" isLeaf="false">
+                <joinNodeMoniker Id="b61ba94e-c3f0-46b1-999a-8fd47560b6d2" LastKnownName="Join2" />
+                <elementDefinition Id="7e734fb9-35ff-4754-aeb9-0d29897c0b6a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="53a6bc9c-6878-4f6e-a9da-d74dedfb2c2a" name="Fork2" isLeaf="false">
+            <elementDefinition Id="c3432dba-8ea5-464d-8ab5-2cdfdda82b76" />
+            <flowNodeTargets>
+              <controlFlow Id="7eb5d193-d5f1-46c6-afa9-00ddc6ce27f6" isLeaf="false">
+                <opaqueActionMoniker Id="062c66b0-c7c3-4dfd-b612-01fd2aedff16" LastKnownName="Вычисление истинности предпосылок каждого правила" />
+                <elementDefinition Id="a478674b-d3b9-452e-bc4c-9be704b64474" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <joinNode Id="b61ba94e-c3f0-46b1-999a-8fd47560b6d2" name="Join2" isLeaf="false">
+            <elementDefinition Id="cdbbb423-5da4-4741-9355-2e7b0e4811fe" />
+            <flowNodeTargets>
+              <controlFlow Id="2925a727-560a-4218-9d2b-365cd620f261" isLeaf="false">
+                <opaqueActionMoniker Id="ca6ffdc8-9160-42e6-b938-b94c98bba350" LastKnownName="Активизация и аккумулирование" />
+                <elementDefinition Id="a6fd10fc-0192-4878-80e7-a90666113aff" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="ca6ffdc8-9160-42e6-b938-b94c98bba350" name="Активизация и аккумулирование" isLeaf="false">
+            <elementDefinition Id="178c2a71-6faf-4e52-ae58-403ae2121438" />
+            <flowNodeTargets>
+              <controlFlow Id="9cabbab2-37ff-4064-a300-18d06a5c0adf" isLeaf="false">
+                <opaqueActionMoniker Id="9a695af9-226c-4718-adc3-595b6af3c117" LastKnownName="Дефаззификация" />
+                <elementDefinition Id="b9402491-f1ae-475e-8fcd-8026d8ba72e6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="9a695af9-226c-4718-adc3-595b6af3c117" name="Дефаззификация" isLeaf="false">
+            <elementDefinition Id="9a8d490e-bed0-40d9-a357-044c1eee2440" />
+            <flowNodeTargets>
+              <controlFlow Id="c70e16c0-9926-410f-bf5d-cd2e4b1485aa" isLeaf="false">
+                <activityFinalNodeMoniker Id="17b1bc4d-457a-4441-9187-fa6592c396f3" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="f6f3f349-4a5c-4e93-ae6c-a2f400ed055a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="bf406e07-0552-4f40-8d33-3e187a9a8732" name="HFi.Modelling">
+    <elementDefinition Id="62c53e93-14d4-4f5b-8021-79cbb593d9f1" />
+    <profileInstances>
+      <packageHasProfileInstances Id="6dcb5b1a-54e4-4f13-b914-c5aa98c6b837">
+        <profileInstance Id="c04d01cf-9adf-41fe-8d07-1e03e95d7380" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d72e6c2d-8861-4e35-809c-71bf45456d3c">
+        <profileInstance Id="3ad488cc-61fe-41ee-bf54-76b464e00e16" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

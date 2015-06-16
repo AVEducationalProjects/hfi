@@ -13,6 +13,8 @@ namespace HFi.Models
 
         public string LastName { get; set; }
 
+        public decimal Salary { get; set; }
+
         public virtual Category RootCategory { get; set; }
 
         public AmountTerm ABitAmountTerm { get; set; }

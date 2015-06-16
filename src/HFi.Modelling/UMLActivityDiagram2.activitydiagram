@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="f04305e5-4d16-48a3-8151-03209943a34e" name="Activity2" linkedPackageId="dffd6d53-d8de-43ff-9317-bd6d2089e42d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="6b893672-4740-4d64-8171-48be976de907" name="Activity2" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="ea59c8a3-ec8f-4eb4-8b24-0d501b04b9bc" />
+        <nodes>
+          <initialNode Id="071eccee-4de1-4b14-8323-d5a691d6f23c" name="Initial1" isLeaf="false">
+            <elementDefinition Id="f3fcc298-21e9-4e8b-9046-2f4832bb8769" />
+            <flowNodeTargets>
+              <controlFlow Id="2a72f371-b6fa-41c8-af4f-0e1e69bd9ea8" isLeaf="false">
+                <forkNodeMoniker Id="3f7606ec-e22d-4db7-aa7d-733b5d38664e" LastKnownName="Fork1" />
+                <elementDefinition Id="8beee49c-bb8d-4f56-9fff-6502a71bef13" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode Id="a948a032-a02b-4b8e-b8b6-77c5259bbdaf" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="67fbde47-a5d4-4f7b-88bb-e50b84dbbc98" />
+          </activityFinalNode>
+          <forkNode Id="3f7606ec-e22d-4db7-aa7d-733b5d38664e" name="Fork1" isLeaf="false">
+            <elementDefinition Id="07713705-e1a7-4faf-a29c-3d526cbc45b0" />
+            <flowNodeTargets>
+              <controlFlow Id="e2d772f4-4a5a-44be-8437-33d077d5f14c" isLeaf="false">
+                <opaqueActionMoniker Id="e7860daf-24b6-403c-9a0e-7987cb190330" LastKnownName="Определение тренда изменения годовых расходов " />
+                <elementDefinition Id="3f975717-d16f-49de-b428-3e7bb7544b67" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="16beba2e-f542-4e6f-872d-843c8a9964f8" name="Выявление годового паттерна" isLeaf="false">
+            <elementDefinition Id="84c738e1-68a5-4bfa-a4ca-9850689b2726" />
+            <flowNodeTargets>
+              <controlFlow Id="49e800eb-e70a-4efb-b8e0-f0e6a4f97036" isLeaf="false">
+                <opaqueActionMoniker Id="0ddc7547-96c2-4225-a0aa-336e99b89e1e" LastKnownName="Выявление недельного паттерна расходов" />
+                <elementDefinition Id="046c3429-b39a-4293-b58e-92a6fb09565f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e7860daf-24b6-403c-9a0e-7987cb190330" name="Определение тренда изменения годовых расходов " isLeaf="false">
+            <elementDefinition Id="c4435c96-f341-4b4c-9396-60f1398f8f90" />
+            <flowNodeTargets>
+              <controlFlow Id="1c7cb3a7-6bae-457e-9ad3-67fb49906c17" isLeaf="false">
+                <opaqueActionMoniker Id="16beba2e-f542-4e6f-872d-843c8a9964f8" LastKnownName="Выявление годового паттерна" />
+                <elementDefinition Id="2876766e-0e82-4fe5-862e-243841e9a15f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="0ddc7547-96c2-4225-a0aa-336e99b89e1e" name="Выявление недельного паттерна расходов" isLeaf="false">
+            <elementDefinition Id="386ac62b-9ce8-4487-939b-9b4ff77d29ad" />
+            <flowNodeTargets>
+              <controlFlow Id="5352fdc9-f7c2-46cd-ae45-5997ebf18068" isLeaf="false">
+                <opaqueActionMoniker Id="5fae2016-4d6a-4336-a632-eb40feb4c6f1" LastKnownName="Вычисление строки приведенной матрицы" />
+                <elementDefinition Id="88095363-6883-42d4-b08f-1162aa11c2e2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="aac2dd78-ad4b-4d5c-bd9e-e02366f6e24e" name="Join2" isLeaf="false">
+            <elementDefinition Id="0d0a2b41-6864-4af8-8e54-8b2f1aa8a400" />
+            <flowNodeTargets>
+              <controlFlow Id="badba226-eb61-4583-ab25-b02154ed03b3" isLeaf="false">
+                <opaqueActionMoniker Id="fa64e7b2-cabc-4865-88bb-034229987602" LastKnownName="Вычисление матрицы бюджетирования" />
+                <elementDefinition Id="163f2d9e-b81d-43c2-afcf-e633128bd03d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <activityParameterNode Id="b281f392-1de0-4d0d-9c81-81102853bbac" name="для каждой статьи расходов" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="4b6d02c7-4f49-4e94-a83b-d8f2e43704c6" />
+            <upperBound>
+              <literalInteger Id="f9a38cca-631e-401a-bc16-41fede84625a" name="2147483647" value="2147483647">
+                <elementDefinition Id="a5be4378-5e12-4dfc-bc5f-cc3ad5f08277" />
+              </literalInteger>
+            </upperBound>
+          </activityParameterNode>
+          <opaqueAction Id="5fae2016-4d6a-4336-a632-eb40feb4c6f1" name="Вычисление строки приведенной матрицы" isLeaf="false">
+            <elementDefinition Id="d72bf32f-db24-41e5-809c-1e673b9d93ae" />
+            <flowNodeTargets>
+              <controlFlow Id="7c5ffb74-9bdb-412a-9701-4dc9dc0ad4cf" isLeaf="false">
+                <joinNodeMoniker Id="aac2dd78-ad4b-4d5c-bd9e-e02366f6e24e" LastKnownName="Join2" />
+                <elementDefinition Id="db9213b4-b22b-430f-85b3-8aa53916bd76" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fa64e7b2-cabc-4865-88bb-034229987602" name="Вычисление матрицы бюджетирования" isLeaf="false">
+            <elementDefinition Id="9611d01a-b8c3-4006-861e-99cde61b6151" />
+            <flowNodeTargets>
+              <controlFlow Id="9d89d1a7-32cf-4609-bc8e-eb55b637a7d7" isLeaf="false">
+                <activityFinalNodeMoniker Id="a948a032-a02b-4b8e-b8b6-77c5259bbdaf" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="0bb4378f-da5d-41ac-86cf-65df21d400f2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="dffd6d53-d8de-43ff-9317-bd6d2089e42d" name="HFi.Modelling">
+    <elementDefinition Id="62c53e93-14d4-4f5b-8021-79cbb593d9f1" />
+    <profileInstances>
+      <packageHasProfileInstances Id="82915250-b1c8-4010-a8f4-7f3108936494">
+        <profileInstance Id="dcb81b23-c3e5-4794-9b46-58ee2f336973" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d5583233-55be-4ecb-ae4b-5bd89e094318">
+        <profileInstance Id="58794080-0852-47df-b99f-50685a060d38" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

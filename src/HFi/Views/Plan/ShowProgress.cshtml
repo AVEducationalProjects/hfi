@@ -1,8 +1,15 @@
-﻿@model HFi.Models.Plan
+﻿@using HFi.ViewModels
+@model HFi.Models.Plan
 
 @{
     ViewBag.Title = "Выполнение бюджета за " + Model.Year + " год";
 }
+
+@{
+    var planTable = (YearTableViewModel)ViewBag.YearPlanTable;
+    var factTable = (YearReportViewModel) ViewBag.YearFactTable;
+}
+
 
 <h2>@ViewBag.Title </h2>
 
@@ -20,4 +27,25 @@
     <tbody>
         @Html.Partial("_ShowProgressTableRow", new ViewDataDictionary { { "Category", ViewBag.YearPlanTable.RootCategory }, { "Level", 0 }, { "YearPlanTable", ViewBag.YearPlanTable }, { "YearFactTable", ViewBag.YearFactTable } })
     </tbody>
+
+    <tfoot>
+        <tr>
+            <td rowspan="2">
+                ИТОГО:
+            </td>
+            @for (int i = 1; i <= 12; i++)
+            {
+                <td class="@((planTable[i] - factTable[i]>=0)?"":"red")">@String.Format("{0:C0}", planTable[i] - factTable[i])</td>
+            }
+            <td></td>
+        </tr>
+        <tr>
+
+            @for (int i = 1; i <= 12; i++)
+            {
+                <td>@String.Format("{0:C0}", planTable[i])</td>
+            }
+            <td></td>
+        </tr>
+    </tfoot>
 </table>

@@ -19,9 +19,9 @@
     </td>
     @for (int i = 1; i <= 12; i++)
     {
-        <td>@String.Format("{0:C0}", factTable[i, category])</td>
+        <td class="@((planTable[i,category] - factTable[i, category]>=0)?"":"red")">@String.Format("{0:C0}", planTable[i, category] - factTable[i, category])</td>
     }
-    <td>@String.Format("{0:C0}", factTable[category])</td>
+    <td>@String.Format("{0:C0}", planTable[category] - factTable[category])</td>
 </tr>
 <tr>
     

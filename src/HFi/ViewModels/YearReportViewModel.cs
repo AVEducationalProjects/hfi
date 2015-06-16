@@ -33,5 +33,13 @@ namespace HFi.ViewModels
                 return _transactions.Where(x => x.Category == category).Sum(x => x.Amount);
             }
         }
+
+        public decimal this[int month]
+        {
+            get
+            {
+                return _transactions.Where(x => x.Date.Month == month).Sum(x => x.Amount);
+            }
+        }
     }
 }

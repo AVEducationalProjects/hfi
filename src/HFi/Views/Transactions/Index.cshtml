@@ -8,6 +8,7 @@
 
 <p>
     @Html.ActionLink("Добавить", "Create", null, new {@class = "btn btn-primary"})
+    @Html.ActionLink("Загрузить", "UploadFile", null, new {@class = "btn btn-success"})
 </p>
 <div id="transactions-container">
     @Html.Partial("_TransactionsList", Model)
